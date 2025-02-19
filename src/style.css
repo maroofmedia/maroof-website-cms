@@ -408,6 +408,10 @@ a:hover {
     opacity: 0.9;
   }
   
+  .main-article__figure img {
+    border-radius: 10px;
+}
+
   /* //////////////////////
     Article Snippets
     /////////////////////// */
