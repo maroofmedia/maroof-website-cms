@@ -117,6 +117,7 @@ section,
 }
 
 .section-title {
+  padding-bottom: 2rem;
   font-size: var(--fs-600);
 }
 
@@ -186,7 +187,10 @@ header.hidden {
 .contact {
   background-color: #2D3748;
   text-align: center;
-
+  padding-top: 2rem; /* Reduce space above content */
+  padding-bottom: 2rem; /* Reduce space below content */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 .social-icons {
   display: flex;
@@ -272,7 +276,9 @@ a:hover {
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-weight: bold;
-}
+  position: relative;
+  z-index: 5; /* Ensure the button is above other elements */
+  }
 
 .read-blog-btn:hover {
   background: var(--secondary);
