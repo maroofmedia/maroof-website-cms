@@ -1,38 +1,99 @@
 ---
 title: example
 layout: 'base.njk'
----  
-      
-<section class="hero">
-  <div class="container flow">
-      <div class="hero__content flow">
-        <h1 class="section-title">Welcome to my blog!</h1>
-        <p>I use this space to document my adventures in front-end development, sharing how I’ve overcome issues I’ve run into, useful resources, and more.</p>
-        <p>Below are some of my favourite articles, or you can go to the blog page to see my most recent posts.</p>
-        <div class="flex-group">
-          <a href="#featured-articles" class="btn btn--primary">Featured articles</a>
-          <a href="./blog" class="btn btn--neutral">Most recent articles</a>
+---
+    <div class="main-content">
+        <div class="profile-section">
+            <img src="/images/main-assests/hero-image.jpg" 
+                 alt="Maroof Lone" 
+                 class="profile-photo">
+            <div class="hero-text">
+                <h1>Hi, I am<br>Maroof Lone</h1>
+                <a href="https://www.marooflone.com/blog" class="read-blog-btn"><i class="fa-solid fa-book"></i> Read my blog</a>
+            </div>
         </div>
-      </div>
-      <div>
-        <img src="//unsplash.it/510" alt="" class="hero__image">
-      </div>
-  </div>
-</section>
+        <section class="about-section">
+            <h2 style="margin-bottom: 1rem; color: var(--accent);">About Me</h2>
+            <p style="color: var(--secondary); line-height: 1.7;">
+                I enjoy things like OSINT, blogging, and writing about media trends and digital beats. I believe in learning something new every day because there’s always room to grow. A Kashmiri at heart, I take pride in my roots and let them guide my journey. My goal is simple: to use my skills and knowledge to make the internet a better and safer place for all.
+            </p>
+        </section>
+    </div>
+    <section class="roles-marquee">
+        <!-- Line 1 -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="role-item">🎓 Student</span>
+                <span class="role-item">🕵️ OSINT Enthusiast</span>
+                <span class="role-item">✍️ Blogger</span>
+                <span class="role-item">🔍 Research Analyst</span>
+                <span class="role-item">🛡️ Cybersecurity</span>
+                <span class="role-item">🎬 Media Lover</span>
+            </div>
+        </div>
+        <!-- Line 2 -->
+        <div class="marquee-container" style="animation-direction: reverse; margin-top: 1rem;">
+            <div class="marquee-content">
+                <span class="role-item">📰 Media Analyst</span>
+                <span class="role-item">🌐 Digital Explorer</span>
+                <span class="role-item">🔐 Security Minded</span>
+                <span class="role-item">❤️ Kashmiri at Heart</span>
+            </div>
+        </div>
+    </section>
 
-<section id="featured-articles" class="featured-articles">
-  <div class="container flow">
-    <h2 class="section-title text-center ">Featured articles</h2>
-    <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-    
-    <ul role="list" class="articles__list flow">
+    <section id="featured-articles" class="featured-articles">
+        <div class="container flow">
+          <h2 class="section-title text-center ">Featured Articles</h2>
+          <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+          
+          <ul role="list" class="articles__list flow">
+      
+            {%- for post in collections.featured | reverse -%}
+            {% include 'article-snippet.njk' %}
+            {%- endfor -%}
+        
+        </section>
+        
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <div class="social-icons">
+            <a href="mailto:hello@marooflone.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.x.com/marooflone13"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/marooflone13"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/maroofmedia"><i class="fab fa-github"></i></a>
+        </div>
+    <script>
+        // Hide header on scroll down, show on scroll up
+        let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+        const threshold = 50; // Reduced threshold for mobile
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > threshold) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
 
-      {%- for post in collections.featured | reverse -%}
-      {% include 'article-snippet.njk' %}
-      {%- endfor -%}
+        // Infinite Marquee Logic
+        document.querySelectorAll('.marquee-container').forEach(container => {
+            const content = container.querySelector('.marquee-content');
+            const clone = content.cloneNode(true);
+            container.appendChild(clone);
 
- </ul>
-  </div>
-</section> 
-  
-   
+            // Add spacing between loops
+            const spacer = document.createElement('span');
+            spacer.style.width = '0rem'; // Adjust spacing as needed
+            spacer.style.display = 'inline-block';
+            content.appendChild(spacer.cloneNode());
+            clone.appendChild(spacer.cloneNode());
+
+            // Adjust animation speed based on screen size
+            const duration = window.innerWidth <= 768 ? '10s' : '12s';
+            content.style.animation = `marquee ${duration} linear infinite`;
+            clone.style.animation = `marquee ${duration} linear infinite`;
+        });
+    </script>
