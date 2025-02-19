@@ -136,8 +136,10 @@ header {
 }
 
 header.hidden {
-  transform: translateY(-100%);
+  transform: translateY(-100%) !important;;
 }
+
+
 
 .logo {
   display: flex;

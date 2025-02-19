@@ -53,8 +53,8 @@ layout: 'base.njk'
             {%- for post in collections.featured | reverse -%}
             {% include 'article-snippet.njk' %}
             {%- endfor -%}
-        
         </section>
+
 
     <section class="contact">
         <h2>Get in Touch</h2>
@@ -65,7 +65,7 @@ layout: 'base.njk'
             <a href="https://github.com/maroofmedia"><i class="fab fa-github"></i></a>
         </div>
     <script>
-        // Hide header on scroll down, show on scroll up
+   // Hide header on scroll down, show on scroll up
         let lastScroll = 0;
         const header = document.getElementById('mainHeader');
         const threshold = 50; // Reduced threshold for mobile
@@ -77,6 +77,7 @@ layout: 'base.njk'
                 header.classList.remove('hidden');
             }
             lastScroll = currentScroll;
+
         });
 
         // Infinite Marquee Logic
