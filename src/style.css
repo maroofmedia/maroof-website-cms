@@ -103,6 +103,7 @@ section,
 
 .text-center {
   text-align: center;
+  margin-top: -1rem; /* Moves it up */
 }
 
 /* Typography */
@@ -284,7 +285,7 @@ a:hover {
 
 .read-blog-btn:hover {
   background: var(--secondary);
-  color: white;
+  color: rgb(75, 65, 65);
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -396,6 +397,13 @@ a:hover {
     margin: 3rem 1;
   }
   
+  .articles__list li {
+    border: 2px solid #4FD1C5; /* Accent color border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1.5rem; /* Space inside the border */
+    margin: 1rem; /* Space around each post */
+    background-color: #1A202C; /* Slightly lighter background for contrast */
+}
   /* //////////////////////
     Individual Article Page
     /////////////////////// */
