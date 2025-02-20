@@ -7,39 +7,39 @@
   box-sizing: border-box;
 }
 
-/* Root Variables - Colors and Fonts from css1 */
+/* Root Variables */
 :root {
-  /* Colors from css1 */
+  /* Colors from */
   --primary: #171923; /* Dark background */
   --secondary: #A0AEC0; /* Light gray */
   --accent: #4FD1C5; /* Teal accent */
 
-  /* Font sizes from css2 */
+  /* Font sizes*/
   --fs-300: 0.9375rem;
   --fs-400: 1.0625rem;
   --fs-500: 1.375rem;
   --fs-600: 1.875rem;
   --fs-700: 2rem;
 
-  /* Font families from css1 */
+  /* Font families*/
   --ff-body: "Baloo Bhaijaan 2", cursive;
-  --ff-heading: "Playfair Display", serif;
+  --ff-heading: "Baloo Bhaijaan 2", cursive;
 
-  /* Font weights from css2 */
+  /* Font weights */
   --fw-400: 400;
   --fw-700: 700;
   --fw-900: 900;
 
-  /* Neutral colors adjusted to match css1's theme */
+  /* Neutral colors */
   --clr-neutral-100: #ffffff; /* White */
-  --clr-neutral-300: #A0AEC0; /* Secondary from css1 */
+  --clr-neutral-300: #A0AEC0; /* Secondary */
   --clr-neutral-400: #808e9b; /* Darker secondary */
   --clr-neutral-500: #d1d5db; /* Light gray */
-  --clr-neutral-900: #171923; /* Primary from css1 */
+  --clr-neutral-900: #171923; /* Primary from */
 
-  /* Primary colors adjusted to match css1's theme */
+  /* Primary colors*/
   --clr-primary-200: #e6fffa; /* Light accent background */
-  --clr-primary-300: #4FD1C5; /* Accent from css1 */
+  --clr-primary-300: #4FD1C5; /* Accent from*/
   --clr-primary-400: #38b2ac; /* Slightly darker accent */
   --clr-primary-500: #2c7a7b; /* Even darker accent */
 }
@@ -103,7 +103,7 @@ section,
 
 .text-center {
   text-align: center;
-  margin-top: -1rem; /* Moves it up */
+  margin-top: -1rem;
 }
 
 /* Typography */
