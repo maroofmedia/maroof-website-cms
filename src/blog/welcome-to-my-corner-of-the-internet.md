@@ -11,23 +11,28 @@ tags:
 image: /assets/blog/bangus_valley.jpg
 imageAlt: Bangus Valley
 ---
-**Hello,  
-Glad you’re here!**
+# My First Post: A New Beginning
 
-This is the very first post on this website. I’ve been thinking about doing this for a long time—grabbing a domain with my name and making a space online that’s just mine. Like, something personal where I can share stuff I care about or things I learn along the way.
+## Hello, Glad You Are Here!
 
-So last week, I finally sat down in front of my PC (with chai by my side, obviously) and bought a domain with my name. Felt kinda cool, honestly. Then I made a super basic structure for the site using HTML, CSS, and JavaScript. Nothing fancy, but it worked. And then I hosted it on Cloudflare Pages because… well, why not? It’s free and easy.
+This is the very first post on my website, and I’m excited to finally get this started. For a long time, I wanted to have a website with my own domain name, but like many things, I kept putting it off. 
 
-Now came the tricky part: adding blog functionality. At first, I thought, “Yo, WordPress!” because I’ve used WP so many times before, and I have plenty of space on my hosting plan. But then I realized, nah, WordPress might be overkill for what I want to do here. This isn’t gonna be some huge blog empire—it’s more like a chill corner of the internet.
+Last week, I finally sat down, purchased a domain, and built a simple website using basic HTML, CSS, and JavaScript. I hosted it on Cloudflare Pages, and with that, the foundation was set. But a website without a blog felt incomplete. 
 
-I did some Googling (as one does), and that’s when I stumbled upon *static site generators*. Ever heard of them? Basically, instead of having a database running everything (like WordPress does), static sites generate plain HTML files from your content. Sounds boring, right? But trust me, it’s awesome because it makes your site faster and simpler to manage.
+At first, I thought of using WordPress (WP) on a subdirectory or subdomain. Since I have worked with WP for years and even have ample space on my hosting, it seemed like an obvious choice. But for a personal blog like this, WP felt too heavy and complex. I wanted something lightweight and simple.
 
-After looking around, I decided to go with **Eleventy** (or 11ty). If you don’t know what Eleventy is, let me break it down for ya: it’s a simple static site generator that lets you write posts in Markdown (which is way easier than writing full-blown HTML every time). No databases, no complicated setups—just clean, straightforward code. Plus, it works perfectly with the design I already had going.
+That’s when I started exploring **static site generators (SSGs)**. After some research, I came across **Eleventy (11ty)**, and it seemed like the perfect fit. 
 
-So yeah, I reworked my initial codebase to integrate Eleventy into my static site. Took some trial and error (and lots of coffee), but now we’re live! 🎉
+## What is Eleventy?
 
-In future posts, I’ll probably talk about random stuff—things I’m learning, projects I’m working on, maybe even some life updates from Kashmir. Who knows? The goal is to share whatever I think could be useful or interesting to you guys.
+Eleventy is a simple and flexible static site generator. Unlike WordPress, it doesn’t require a database, making the website faster and easier to manage. It lets me write content in **Markdown**, which is a straightforward way to format text without dealing with complex editors. Eleventy is also highly customizable, giving me full control over the design and structure of my blog. 
 
-Thanks for stopping by, though. Means a lot. Catch you in the next post!
+Once I chose Eleventy, I modified my website to integrate it. It took some effort, but now my blog is fully functional and running smoothly!
+
+## What’s Next?
+
+Now that my blog is live, I plan to share my thoughts, experiences, and whatever I learn along the way. Whether it's about web development, OSINT, fact-checking, cybersecurity, or just random musings—this space is for all of it. 
+
+If you’re reading this, thanks for stopping by! This is just the beginning of something exciting. Let’s see where this journey takes us.
 
 ~ Maroof
