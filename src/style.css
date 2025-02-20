@@ -119,6 +119,7 @@ section,
 
 .section-title {
   padding-bottom: 2rem;
+  padding-top: 2rem;
   font-size: var(--fs-600);
 }
 
@@ -444,6 +445,7 @@ a:hover {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 10px;
+    ali
   }
   
   .snippet__title {
@@ -453,13 +455,13 @@ a:hover {
   }
   
   .snippet__title a {
-    color: inherit;
+    color: #4FD1C5;
     text-decoration: none;
   }
   
   .snippet__title a:hover,
   .snippet__title a:focus {
-    color: var(--clr-primary-300); /* Teal accent on hover */
+    color: #ffffff; /* Teal accent on hover */
   }
   
   .snippet__meta {
@@ -584,11 +586,8 @@ ol:where([role="list"]) {
 }
 
 .article-title {
- color: #e6fffa;
+ color: #4FD1C5;
  font-size: 30px;
-}
-.article-title:hover {
-  color: var(--accent); /* Teal accent on hover */
 }
 
 /* Remove default margin */
