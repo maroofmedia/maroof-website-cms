@@ -414,9 +414,11 @@ a:hover {
   }
   
   .main-article__figure figcaption {
-    margin: 1rem 0;
-    font-size: var(--fs-300);
+    margin: 0.5rem 0;
+    font-size: 15px;
     opacity: 0.9;
+    font-style: italic;
+    font-weight: normal;    
   }
   
   .main-article__figure img {
