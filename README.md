@@ -1,24 +1,77 @@
-# JAMStack personal blog - starter files
+# 🌍 Personal Website & Blog
 
-These are the starting files used by [Kevin Powell](https://kevinpowell.co) to create a personal blog site for the [Codementor](https://www.codementor.io/) DevProjects Challenge, [Create a fast and secure blog using JAMStack](https://www.codementor.io/projects/web/create-a-fast-and-secure-blog-using-jamstack-c93coupnxb). You are free to use them however you want to get started with the challenge, if you'd like to start working on creating the site without worrying about the content itself.
+This is my personal website and blog, now powered by **Eleventy (11ty)**, a simple and flexible static site generator. I initially built this site using **HTML**, **CSS**, and **JavaScript**, and later integrated Eleventy to enhance the blogging experience.
 
-The provided files are finished pages using regular HTML and CSS. The HTML files can be broken down into peices, and used to build out the different templates and partial files using a templating language of your choice.
+## 🚀 Features
 
-The styling of the pages is already complete. That said, the `design-files` folder contains both a Figma file, and .jpg of a design if you want to try to build it from scratch. You do not need to use this design at all either, it depends on how you wish to approach the challenge.
+- Fast and secure static site built with **Eleventy (11ty)**  
+- Clean, minimal design with responsive styling  
+- Easy-to-navigate blog structure  
+- Markdown support for writing blog posts  
+- Optimized for performance and SEO  
 
-The `src` folder contains files so that you can get your project up and running without worrying about content for posts/articles. That folder contains:
+## 🛠️ Built With
 
-- HTML files to use as a base for the different page layouts. These can be turned into the templates that will be used.
-- CSS file for styling the pages
-- 5 blog articles in the `blog` folder
-- images and a logo in the `assets` folder
+- **Eleventy (11ty)** – Static Site Generator  
+- **HTML5** – Structure and content  
+- **CSS3** – Custom styling and layouts  
+- **JavaScript** – Basic functionality and interactivity  
 
-The articles are written in Markdown, and include Front Matter. Depending on the Static Site Generator you use, it is possible that you will have to modify these a little if you wish to use them. 
+## 📂 Project Structure
 
-## DevProjects Challenge
+```
+├── src/
+│ ├── _includes/ # Nunjucks templates and partials
+│ │ ├── article.njk # Article snippet template
+│ │ ├── base.njk # Base layout template
+│ │ ├── footer.njk # Footer template
+│ │ ├── header.njk # Header template
+│ ├── admin/ # Netlify CMS configuration
+│ │ ├── config.yml # CMS configuration file
+│ │ └── index.html # Admin panel
+│ ├── assets/ # Static files (images, fonts, etc.)
+│ ├── blog/ # Blog posts written in Markdown
+│ ├── blog.njk # Blog layout template
+│ ├── style.css # Main stylesheet
+│ └── index.njk # Home page layout
+├── .eleventy.js # Eleventy configuration file
+├── package.json # Project metadata and dependencies
+├── README.md # Project documentation
+```
 
-As mentioned, these files are here to help get started with a DevProjects challenge. Please visit the [challenge page](#) to learn more about the challenge.
+## 💻 Getting Started
 
-## Tutorial
+To run this project locally:
 
-You can [watch this video](https://youtu.be/4wD00RT6d-g) to see how Kevin uses Eleventy, Netlify, and Netlify CMS to create a full-featured blog site built entirely with static files.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/maroofmedia/maroof-website-cms.git
+   ```
+2. **Navigate into the project folder:**
+   ```bash
+   cd maroof-website-cms
+   ```
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Start the local development server:**
+   ```bash
+   npm start
+   ```
+
+Your site should now be running at `http://localhost:8080`.
+
+## 🌐 Live Site
+
+You can view the live version of this site here:  
+👉 [My Website](https://www.marooflone.com)
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Built using **Eleventy (11ty)**  
+- Deployed using **Netlify**
