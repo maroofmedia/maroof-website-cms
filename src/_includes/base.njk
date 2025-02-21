@@ -19,11 +19,11 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="{{ page.url | url }}">
-<meta property="og:type" content="{% if page.url contains '/blog/' %}article{% else %}website{% endif %}">
+<meta property="og:type" content="{% if '/blog/' in page.url %}article{% else %}website{% endif %}">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ title or 'Hi, I\'m Maroof Lone' }}">
+<meta name="twitter:title" content="{{ title or 'Hi, I'm Maroof Lone' }}">
 <meta name="twitter:description" content="{{ description or 'Blogger | OSINT Enthusiast | Media Analyst | Cybersecurity Explorer | Kashmiri at Heart | Exploring stories, trends, and insights that matter.' }}">
 <meta name="twitter:image" content="{{ image or '/assets/images/main-assets/og-discription-image.png' }}">
 
