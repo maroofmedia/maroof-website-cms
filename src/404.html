@@ -3,80 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error Page</title>
+    <title>404 - Page Not Found</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
     <style>
-        /* CSS Styling */
-        body {
+        /* General Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #171923;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a40); /* Gradient Background */
             font-family: 'Baloo Bhaijaan 2', cursive;
             color: white;
+            overflow: hidden;
+        }
+
+        /* Main Container */
+        .container {
             text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
+        /* 404 Text Styling */
         h1 {
-            font-size: 150px;
-            margin: 0;
+            font-size: 200px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6f61, #ff9a8b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: glitch 1.5s infinite;
         }
 
+        /* Subtext Styling */
         p {
             font-size: 24px;
-            margin: 10px 0 30px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
         }
 
+        /* Buttons Styling */
         .buttons {
             display: flex;
-            flex-direction: column; /* Stack buttons vertically on mobile */
-            gap: 15px; /* Space between buttons */
-            align-items: center; /* Center buttons horizontally */
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .button {
             padding: 12px 24px;
             font-size: 18px;
             font-family: 'Baloo Bhaijaan 2', cursive;
-            color: #fff;
-            background-color: #3b82f6;
+            color: white;
+            background: linear-gradient(45deg, #ff6f61, #ff9a8b);
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            width: 100%; /* Full width on mobile */
-            max-width: 200px; /* Limit width on larger screens */
-            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 111, 97, 0.5);
         }
 
         .button:hover {
-            background-color: #2563eb;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 111, 97, 0.7);
         }
 
-        /* Responsive Design for Mobile */
-        @media (min-width: 768px) {
-            .buttons {
-                flex-direction: row; /* Align buttons horizontally on larger screens */
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(-5px);
+            }
+            40% {
+                transform: translateX(5px);
+            }
+            60% {
+                transform: translateX(-5px);
+            }
+            80% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h3 {
+                font-size: 20px;
             }
 
-            .button {
-                width: auto; /* Allow buttons to shrink on larger screens */
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- 404 Error Content -->
-    <div>
-        <h1>404</h1>
-        <p>Oreee Kathh Tapali Gasak</p>
+    <div class="container">
+        <h3>404 - Page Not Found</h3>
         <div class="buttons">
-            <a href="/" class="button">Home</a>
-            <a href="/blog" class="button">Blog</a>
+            <a href="/" class="button">Go to Home</a>
+            <a href="/blog" class="button">Visit Blog</a>
         </div>
     </div>
 </body>
