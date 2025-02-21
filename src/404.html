@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #171923;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 150px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 24px;
+            margin: 10px 0 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically on mobile */
+            gap: 15px; /* Space between buttons */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        .button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+            color: #fff;
+            background-color: #3b82f6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Full width on mobile */
+            max-width: 200px; /* Limit width on larger screens */
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (min-width: 768px) {
+            .buttons {
+                flex-direction: row; /* Align buttons horizontally on larger screens */
+            }
+
+            .button {
+                width: auto; /* Allow buttons to shrink on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 404 Error Content -->
+    <div>
+        <h1>404</h1>
+        <p>Oreee Kathh Tapali Gasak</p>
+        <div class="buttons">
+            <a href="/" class="button">Home</a>
+            <a href="/blog" class="button">Blog</a>
+        </div>
+    </div>
+</body>
+</html>
