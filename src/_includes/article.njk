@@ -13,12 +13,41 @@ layout: 'base.njk'
         {{ imageAlt }}
       </figcaption>
     </figure>
-    <p><i class="fa-solid fa-user"></i> Written By: {{ author }}</p>
-    <p><i class="fas fa-calendar-alt"></i> Published On: {{ date | postDate }}</p>
-    <hr style="border: none; height: 2px; background-color: #E2E8F0;">
+    <div class="post-meta">
+      <p><i class="fa-solid fa-user"></i> Written By: {{ author }}</p>
+      <p><i class="fas fa-calendar-alt"></i> Published On: {{ date | postDate }}</p>
+    </div>  
   {{ content | safe }}
   
 </div>
 </article>
 <center>-------- End --------</center>
+<section class="recent-posts">
+  <h3 class="recent-posts__title">Recent Posts</h3>
+  <ul class="recent-posts__list">
+    {% set recentPosts = collections.post | reverse %} {# Get all posts reversed #}
+    {% set count = 0 %}
+    {% for recentPost in recentPosts %}
+      {% if recentPost.url != page.url and count < 5 %} {# Exclude current post & limit to 5 #}
+        <li class="recent-post">
+          <a href="{{ recentPost.url }}" class="recent-post__link">
+            {% if recentPost.data.image %}
+              <img src="{{ recentPost.data.image }}" alt="{{ recentPost.data.imageAlt }}" class="recent-post__image">
+            {% endif %}
+            <div class="recent-post__content">
+              <h4 class="recent-post__title">{{ recentPost.data.title }}</h4>
+              <p class="recent-post__date">{{ recentPost.date | postDate }}</p>
+            </div>
+          </a>
+        </li>
+        {% set count = count + 1 %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="read-all-posts">
+    <a href="/blog" class="read-all-posts__button">Read All Posts</a>
+  </div>  
+</section>
+
+
 <br>

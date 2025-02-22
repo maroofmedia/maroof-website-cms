@@ -630,3 +630,123 @@ dd {
 .logo-link:hover {
   opacity: 0.8; /* Optional hover effect */
 }
+
+.recent-posts {
+  margin-top: 2rem; /* Reduced space above the section */
+  padding: 1.5rem;
+  background-color: #1A202C;
+  border-radius: 0.5rem;
+  color: #A0AEC0;
+
+  /* Space adjustments on both sides */
+  margin-left: 10rem;  /* Adjust for left spacing */
+  margin-right: 10rem; /* Adjust for right spacing */
+
+  margin-bottom: 2rem; /* Add space between recent posts and footer */
+}
+
+.recent-posts__title {
+  text-align: center;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-size: 1.5rem; /* Adjust recent post heading size */
+}
+
+.recent-posts__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.recent-post {
+  display: flex;
+  background-color: #1A202C;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.recent-post__image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+
+  /* Sharper image rendering */
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  margin-right: 1rem; /* Add space between image and title */
+
+}
+
+.recent-post__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.recent-post__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.recent-post__title {
+  font-size: 1.2rem; /* Adjust recent post text size */
+  margin: 0;
+  color: white;
+}
+
+.recent-post__date {
+  color: #CBD5E0;
+  font-size: 0.9rem; /* Date size */
+  margin-top: 0.2rem;
+}
+
+.read-all-posts {
+  text-align: center;
+  margin-top: 1.5rem; /* Space above the button */
+}
+
+.read-all-posts__button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #005243; /* Button background */
+  color: #FFFFFF; /* Text color */
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-all-posts__button:hover {
+  background-color: #007A63; /* Lighter shade on hover */
+  transform: translateY(-3px); /* Lift effect */
+}
+
+.post-meta {
+  background-color: #2D3748; /* Slightly darker bg */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #CBD5E0; /* Lighter text color */
+  margin-bottom: 1rem; /* Space below meta */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.post-meta i {
+  color: #FFD700; /* Icon color (Gold) */
+}
+
+blockquote {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #1f2933;  /* Slightly lighter than the body bg */
+  border-left: 4px solid #3b82f6;  /* Subtle blue accent */
+  font-style: italic;
+  color: #e0e0e0;  /* Light grey text for better readability */
+  border-radius: 0.5rem;  /* Rounded corners for a soft look */
+}
