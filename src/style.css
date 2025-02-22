@@ -189,12 +189,8 @@ header.hidden {
 }
 /* Contact Section */
 .contact {
-  background-color: #2D3748;
   text-align: center;
-  padding-top: 2rem; /* Reduce space above content */
-  padding-bottom: 2rem; /* Reduce space below content */
-  margin-top: 0; /* Remove top margin */
-  margin-bottom: 0; /* Remove bottom margin */
+  padding: 2rem 2rem;
 }
 .social-icons {
   display: flex;
@@ -213,10 +209,27 @@ header.hidden {
 }
 
 footer {
-  background: #005243;
+  background-color: #005243; /* Background color */
+  color: #A0AEC0;
   text-align: center;
-  padding: 1.2rem;
-  font-size: 0.9rem;
+}
+
+footer .contact h2 {
+  color: #FFD700; /* Change "Get in Touch" color (gold/yellow) */
+  margin-bottom: 0.5rem; /* Reduce space below the heading */
+}
+
+footer .social-icons {
+  margin-top: 0.2rem; /* Reduce space between heading and icons */
+}
+
+footer .social-icons a {
+  margin: 0 0.5rem; /* Space between icons */
+  color: #A0AEC0;
+}
+
+footer p {
+  margin-top: 0.5rem; /* Small space above footer text */
 }
 
 a {
