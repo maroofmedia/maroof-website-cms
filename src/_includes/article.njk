@@ -13,7 +13,8 @@ layout: 'base.njk'
         {{ imageAlt }}
       </figcaption>
     </figure>
-  <p><i class="fas fa-calendar-alt"></i> Published On: {{ date | postDate }}</p>
+    <p><i class="fa-solid fa-user"></i> Written By: {{ author }}</p>
+    <p><i class="fas fa-calendar-alt"></i> Published On: {{ date | postDate }}</p>
     <hr style="border: none; height: 2px; background-color: #E2E8F0;">
   {{ content | safe }}
   
