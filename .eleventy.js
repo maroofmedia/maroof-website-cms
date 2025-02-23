@@ -49,6 +49,11 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
 
+  // Add global site data for absolute URLs
+  eleventyConfig.addGlobalData("site", {
+    url: "https://www.marooflone.com", 
+  });
+
   // Return configuration settings
   return {
     dir: {
