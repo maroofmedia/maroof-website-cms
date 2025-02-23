@@ -762,13 +762,6 @@ blockquote {
 }
 
 /* 📱 Mobile Responsiveness */
-@media (max-width: 1024px) {
-  .recent-posts {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-}
-
 @media (max-width: 768px) {
   .recent-posts {
     margin-left: 3%;
@@ -776,14 +769,29 @@ blockquote {
   }
 
   .recent-post {
-    flex-direction: column; /* Stack image and content vertically */
+    flex-direction: row; /* Keep image on the left and content on the right */
+    align-items: stretch; /* Make sure image and content are of equal height */
+    gap: 1rem; /* Space between image and content */
   }
 
   .recent-post__image {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 0;
-    margin-bottom: 1rem;
+    width: 30%; /* Image takes up 30% width */
+    height: auto;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
+  .recent-post__content {
+    width: 70%; /* Content takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .recent-post__title {
+    font-size: 1rem; /* Slightly smaller font for mobile */
+    line-height: 1.3;
+    margin: 0;
   }
 
   .recent-posts__title {
@@ -798,8 +806,17 @@ blockquote {
 }
 
 @media (max-width: 480px) {
-  .recent-posts__title {
-    font-size: 1.1rem;
+  .recent-post {
+    flex-direction: row; /* Maintain row layout for small screens too */
+  }
+
+  .recent-post__image {
+    width: 35%; /* Slightly more space for image */
+    height: auto;
+  }
+
+  .recent-post__title {
+    font-size: 0.9rem;
   }
 
   .read-all-posts__button {
@@ -808,4 +825,3 @@ blockquote {
     font-size: 0.85rem;
   }
 }
-

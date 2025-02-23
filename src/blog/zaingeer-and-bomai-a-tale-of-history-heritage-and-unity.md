@@ -15,6 +15,8 @@ imageAlt: "Zaingeer and Bomai: A tribute to Kashmir's rich history, culture, and
 ---
 *This article first appeared in the annual school magazine, **Zaingeer**, of **Government Boys Higher Secondary School, Bomai Sopore**, for the 2023-2024 academic year under my name. Below, I have reproduced it with slight edits along with some images.*
 
+- - -
+
 Picture a place where history meets hope, and the stories of the past live on in the present. In the beautiful landscapes of Kashmir, we find two special places – **Zaingeer** and **Bomai**. These aren’t just names; they carry memories, traditions, and a strong sense of community. Zaingeer, a group of villages, and Bomai, one of its own, reflect a shared history and unity that has lasted for generations. This article takes you through their rich heritage and the close bonds that make these places truly special.
 
 - - -

@@ -3,7 +3,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary("md", require("markdown-it")());
   };
   
-
 module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy('./src/style.css');
