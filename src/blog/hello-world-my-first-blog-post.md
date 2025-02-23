@@ -15,20 +15,20 @@ imageAlt: Just me, my laptop, and the mountains outside. Image generated using A
 ---
 # Hello, Glad You’re Here!
 
-Welcome to the very first post on my website! I’m genuinely excited to kick things off and finally bring this idea to life. For a long time, I dreamed of having a website with my own domain name—but like most plans, I kept putting it off.
+Welcome to the very first post on my website! I’m genuinely excited to kick things off and finally bring this idea to life. For a long time, I had planned of having a website with my own domain name—but like most plans, I kept putting it off.
 
 ## The Journey Begins 🚀
 
 Last week, I finally decided to stop procrastinating. I bought a domain, built a simple website using basic **HTML**, **CSS**, and **JavaScript**, and hosted it on **[Cloudflare Pages](https://pages.cloudflare.com/)**. Just like that, the foundation was set.
 
-But something was missing…  
+But something was missing…\
 A website without a blog felt incomplete.
 
 ## Why Not WordPress?
 
 At first, I considered using **[WordPress (WP)](https://wordpress.org/)** for my blog, either on a subdirectory or a subdomain. 
 
-> *What’s WordPress?*  
+> *What’s WordPress?*\
 > WordPress is a popular content management system (CMS) that powers millions of websites. It allows users to create, manage, and publish content with ease using plugins, themes, and a user-friendly interface.
 
 Since I’ve worked with WordPress for years and had plenty of hosting space available, it seemed like the obvious choice. But for a personal blog like this, WordPress felt a bit too heavy and overly complex. I wanted something **lightweight** and **simple**.
@@ -37,7 +37,7 @@ Since I’ve worked with WordPress for years and had plenty of hosting space ava
 
 That’s when I started exploring **Static Site Generators (SSGs)**.
 
-> *What’s an SSG?*  
+> *What’s an SSG?*\
 > An SSG converts plain text content into static HTML files during the build process. Unlike traditional CMS platforms like WordPress, SSGs don’t need a database, making websites faster, more secure, and easier to manage.
 
 After some research, I found **[Eleventy (11ty)](https://www.11ty.dev/)**—and it seemed like the perfect fit.
@@ -56,15 +56,15 @@ Once I settled on Eleventy, I got to work integrating it into my website. It too
 
 Now that my blog is live, I plan to share:
 
-- 💻 **Web Development Tips**  
-- 🔍 **OSINT Techniques**  
-- ✅ **Fact-Checking Insights**  
-- 🌐 **Thoughts on Social Media & Internet Culture**  
-- 📝 **Random musings**  
+* 💻 **Web Development Tips**  
+* 🔍 **OSINT Techniques**  
+* ✅ **Fact-Checking Insights**  
+* 🌐 **Thoughts on Social Media & Internet Culture**  
+* 📝 **Random musings**  
 
 This space will be my little corner of the internet—where I share ideas, learn new things, and hopefully connect with readers like you.
 
----
+- - -
 
 If you’re reading this, **thank you** for stopping by! This is just the beginning of what I hope will be an exciting journey.
 
