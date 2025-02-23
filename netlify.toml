@@ -1,4 +1,24 @@
+# Redirect all unknown routes to 404
 [[redirects]]
-from = "/*"
-to = "/404.html"
-status = 404
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Set caching and headers for asset files
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Accept-Ranges = "none"
+
+# Set the correct content type for WebP images
+[[headers]]
+  for = "/assets/*.webp"
+  [headers.values]
+    Content-Type = "image/webp"
+
+# Enable byte-range requests for all files
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Accept-Ranges = "bytes"
