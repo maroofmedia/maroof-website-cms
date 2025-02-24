@@ -9,7 +9,7 @@ date: 2025-02-23T22:02:00.000Z
 tags:
   - post
   - writing
-image: /assets/blog/zaingeer-and-bomai_compressed.jpg
+image: /assets/blog/zaingeer-and-bomai_compressed_v1.jpg
 imageAlt: "Zaingeer and Bomai: A tribute to Kashmir's rich history, culture, and
   timeless unity. Image generated using AI."
 ---
