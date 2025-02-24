@@ -861,16 +861,17 @@ li {
 /* Social Share Buttons */
 .social-share {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;  /* Reduced gap */
   justify-content: center;
   margin: 2rem 0;
+  flex-wrap: wrap;  /* Wrap as backup for very small screens */
 }
 
 .social-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  gap: 0.3rem;  /* Smaller space between icon and text */
+  padding: 0.4rem 0.6rem;  /* Reduced padding */
   border-radius: 0.5rem;
   color: #fff;
   text-decoration: none;
@@ -879,7 +880,7 @@ li {
 }
 
 .social-btn i {
-  font-size: 1rem;
+  font-size: 0.9rem;  /* Slightly smaller icons */
 }
 
 /* Platform-Specific Colors */
@@ -893,20 +894,18 @@ li {
   opacity: 0.9;
 }
 
-/* Adjust Icon Sizes for Mobile */
-.social-btn i {
-  font-size: 1rem;  /* Default size */
-}
-
-/* Smaller icons for mobile */
+/* Adjust for Mobile */
 @media (max-width: 600px) {
-  .social-btn i {
-    font-size: 0.8rem;  /* Smaller size for mobile */
+  .social-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
   }
 
-  .social-btn {
-    padding: 0.4rem 0.8rem;  /* Reduce button padding */
-    font-size: 0.85rem;
+  .social-btn i {
+    font-size: 0.75rem;
+  }
+
+  .social-share {
+    gap: 0.3rem;  /* Smaller gap on mobile */
   }
 }
-
