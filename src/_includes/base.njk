@@ -21,8 +21,12 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image:alt" content="{{ title | default('Maroof Lone - Blogger and Media Analyst') }}">
 
-{% if page.url and page.url[0:6] == '/blog/' %}
-  <meta property="og:type" content="article">
+{% if page.url %}
+  {% if page.url[0:6] == '/blog/' %}
+    <meta property="og:type" content="article">
+  {% else %}
+    <meta property="og:type" content="website">
+  {% endif %}
 {% else %}
   <meta property="og:type" content="website">
 {% endif %}
