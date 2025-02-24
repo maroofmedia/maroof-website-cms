@@ -1,0 +1,134 @@
+---
+title: About Me
+layout: 'base.njk'
+---
+
+<section class="about-hero">
+  <div class="container">
+    <img src="/assets/images/main-assets/hero-image.jpg" alt="Maroof Lone" class="about-photo">
+    <div class="about-text">
+      <h1>About Me</h1>
+      <p>Hey, I’m <strong>Maroof</strong> from Srinagar, Kashmir. I’m a part-time blogger, and sometimes I write about tech beats, share tech guides, and more. I enjoy things like <strong>OSINT</strong>, blogging, and writing about media trends and digital culture.</p>
+
+      <blockquote>
+        <em>"The more you learn, the more you realize how much you don't know."</em>
+      </blockquote>
+      
+      <p>My goal is simple: to use my skills and knowledge to make the internet a better and safer place for everyone. Along the way, I’ll be sharing thoughts, ideas, and lessons I’ve learned here on this site. Hope you find something valuable!</p>
+      <a href="/blog" class="read-blog-cm"><i class="fa-solid fa-book"></i> Read my blog</a>
+      <a href="/contact-me" class="contact-link">
+        Contact Me <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Read My Blog Button */
+.read-blog-cm {
+  display: block;
+  padding: 0.75rem 1.5rem;  /* Same padding as read-all-posts__button */
+  background-color: #007A63;  /* Matching green color */
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;  /* Same font size for consistency */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;  /* Add spacing from other elements */
+}
+
+/* Button Hover Effect */
+.read-blog-cm:hover {
+  background-color: #009B7D;  /* Slightly lighter green for hover */
+  transform: translateY(-3px);  /* Same hover lift */
+}
+
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .contact-link:hover {
+    background-color: #005243;
+  }
+/* About Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 5rem 2rem 3rem; 
+}
+
+.about-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.about-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+}
+
+.about-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.read-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.read-blog-btn:hover {
+  background: var(--secondary);
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .about-text h1 {
+    font-size: 1.5rem;
+  }
+}
+</style>

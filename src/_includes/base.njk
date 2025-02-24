@@ -47,12 +47,13 @@
 
 </head>
 <body>
+  <div class="page-wrapper">
   {% include 'header.njk' %}
   <main>
     {{ content | safe }}
   </main>
     {% include 'footer.njk' %}
-
+  </div>
 
     <script>
       if (window.netlifyIdentity) {
@@ -64,6 +65,21 @@
           }
         });
       }
+   // Hide header on scroll down, show on scroll up
+      let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+        const threshold = 50; // Reduced threshold for mobile
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > threshold) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+
+        });
+
     </script>
     
 </body>

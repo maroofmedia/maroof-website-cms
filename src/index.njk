@@ -61,21 +61,6 @@ layout: 'base.njk'
         </section>
      
     <script>
-   // Hide header on scroll down, show on scroll up
-        let lastScroll = 0;
-        const header = document.getElementById('mainHeader');
-        const threshold = 50; // Reduced threshold for mobile
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScroll && currentScroll > threshold) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            lastScroll = currentScroll;
-
-        });
-
         // Infinite Marquee Logic
         document.querySelectorAll('.marquee-container').forEach(container => {
             const content = container.querySelector('.marquee-content');
