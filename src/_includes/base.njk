@@ -21,14 +21,17 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image:alt" content="{{ title | default('Maroof Lone - Blogger and Media Analyst') }}">
 
-{% if '/blog/' in page.url %}
+{% if page.url and page.url[0:6] == '/blog/' %}
   <meta property="og:type" content="article">
 {% else %}
   <meta property="og:type" content="website">
 {% endif %}
 
+
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:width" content="1200">
+<meta name="twitter:image:height" content="630">
 <meta name="twitter:title" content="{{ title | default('Hi, I\'m Maroof Lone') }}">
 <meta name="twitter:description" content="{{ description | default('Blogger | OSINT Enthusiast | Media Analyst | Cybersecurity Explorer | Kashmiri at Heart | Exploring stories, trends, and insights that matter.') }}">
 <meta name="twitter:image" content="{{ site.url }}{% if image %}{{ image }}{% else %}/assets/images/main-assets/og-discription-image.png{% endif %}">
