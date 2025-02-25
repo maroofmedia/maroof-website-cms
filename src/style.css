@@ -275,15 +275,6 @@ a:hover {
   opacity: 0.2;
 }
 
-.hero-text {
-  text-align: center;
-  margin-top: 1rem;
-}
-.about-section {
-  flex: 1;
-  padding: 1rem;
-}
-
 /* Roles Marquee */
 .roles-marquee {
   background: #2D3748;
@@ -914,3 +905,61 @@ li {
   }
 }
 
+/* Read My Blog Button - Compact & Stylish */
+.read-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background-color: #4FD1C5;
+  color: #171923;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Makes it clickable */
+  border: 2px solid transparent;
+  margin-top: 1rem; /* Add space above the button */
+  position: relative; /* Ensures z-index works */
+  z-index: 10; /* Fixes clickability issue */
+}
+
+/* Hover & Focus Effects */
+.read-blog-btn:hover,
+.read-blog-btn:focus {
+  background-color: #38B2AC;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  border-color: #2C7A7B;
+}
+
+/* Icon Styling */
+.read-blog-btn i {
+  font-size: 1rem;
+}
+
+/* Fix for Clickability on Active */
+.read-blog-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Fixes */
+@media (max-width: 600px) {
+  .read-blog-btn {
+    margin-top: 1.5rem; /* Add more space above on small screens */
+    z-index: 20; /* Ensure it's above all elements */
+  }
+}
+
+.hero-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+.about-section {
+  flex: 1;
+  padding: 1rem;
+}
