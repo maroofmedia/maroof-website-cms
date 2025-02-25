@@ -1,32 +1,31 @@
-name: Deploy Eleventy Site
+name: Deploy Eleventy Site 🚀
 
 on:
   push:
     branches:
-      - main
+      - main 
+
 jobs:
   build:
-    environment: Production  # Links to the environment you created
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18' 
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Eleventy Site
-        run: npm run build
+      - name: Build Site
+        run: npm run build 
 
       - name: Deploy 🚀
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    personal_token: ${{ secrets.GH_TOKEN }}
-    publish_dir: ./public  # This matches your Eleventy output directory
-
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: public 
