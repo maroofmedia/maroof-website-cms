@@ -45,20 +45,22 @@ layout: 'base.njk'
 
     <section id="featured-articles" class="featured-articles">
         <div class="container flow">
-          <h2 class="section-title text-center ">Featured Articles</h2>
+          <h2 class="section-title text-center">Featured Articles</h2>
           <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-          
-          <ul role="list" class="articles__list flow">
       
+          <ul role="list" class="articles__list flow">
             {%- for post in collections.featured | reverse -%}
             {% include 'article-snippet.njk' %}
             {%- endfor -%}
-
-            <a href="/blog" class="read-blog-btn" 
-        style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: #4FD1C5; color: #171923; font-size: 1rem; font-weight: bold; text-transform: uppercase; text-decoration: none; border-radius: 5px; transition: all 0.3s ease; margin: 1rem auto; display: block; max-width: fit-content;">
-        <i class="fa-solid fa-user-pen"></i> View All Posts
-     </a>
-        </section>
+          </ul>
+      
+          <div class="read-all-posts">
+            <a href="/blog" class="read-all-posts__button">
+              <i class="fa-solid fa-user-pen"></i> View All Posts
+            </a>
+          </div>
+        </div>
+      </section>
      
     <script>
         // Infinite Marquee Logic

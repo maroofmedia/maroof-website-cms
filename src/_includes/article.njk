@@ -35,6 +35,23 @@ layout: 'base.njk'
 </div>
 </article>
 <center>-------- End --------</center>
+<!-- Share Buttons -->
+<div class="social-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url }}" target="_blank" class="social-btn facebook">
+    <i class="fa-brands fa-facebook-f"></i> Share
+  </a>
+  <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url | url }}&text={{ title | urlencode }}" target="_blank" class="social-btn twitter">
+    <i class="fa-brands fa-twitter"></i> Tweet
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url }}" target="_blank" class="social-btn linkedin">
+    <i class="fa-brands fa-linkedin-in"></i> Share
+  </a>
+  <a href="https://api.whatsapp.com/send?text={{ title | urlencode }}%20{{ site.url }}{{ page.url | url }}" target="_blank" class="social-btn whatsapp">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+
+  
+</div>
 <section class="recent-posts">
   <h3 class="recent-posts__title">Recent Posts</h3>
   <ul class="recent-posts__list">

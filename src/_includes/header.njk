@@ -23,6 +23,10 @@
 </header>
 
 <style>
+  /* Prevent scrolling when menu is open */
+body.no-scroll {
+  overflow: hidden;
+}
 /* Header */
 header {
   position: fixed;
@@ -159,28 +163,35 @@ header.hidden {
 </style>
 
 <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-const overlay = document.querySelector('.overlay');
-const hamburgerIcon = document.querySelector('.hamburger');
-
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  menu.classList.toggle('active');
-  overlay.classList.toggle('active');
-  hamburgerIcon.classList.toggle('fa-bars');
-  hamburgerIcon.classList.toggle('fa-times');
-});
-
-overlay.addEventListener('click', () => {
-  closeMenu();
-});
-
-function closeMenu() {
-  menuToggle.classList.remove('active');
-  menu.classList.remove('active');
-  overlay.classList.remove('active');
-  hamburgerIcon.classList.add('fa-bars');
-  hamburgerIcon.classList.remove('fa-times');
-}
-</script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.overlay');
+  const hamburgerIcon = document.querySelector('.hamburger');
+  
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburgerIcon.classList.toggle('fa-bars');
+    hamburgerIcon.classList.toggle('fa-times');
+  
+    // Prevent body scroll when the menu is open
+    document.body.classList.toggle('no-scroll', menu.classList.contains('active'));
+  });
+  
+  overlay.addEventListener('click', () => {
+    closeMenu();
+  });
+  
+  function closeMenu() {
+    menuToggle.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburgerIcon.classList.add('fa-bars');
+    hamburgerIcon.classList.remove('fa-times');
+  
+    // Enable body scroll again when menu closes
+    document.body.classList.remove('no-scroll');
+  }
+  </script>
+  
