@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Hello, World! My First Blog Post </title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Hello, World! My First Blog Post">
+<meta property="og:description" content="After a long wait, I finally built my personal website! In this post, I share how I created it using HTML, CSS, and JavaScript, why I chose Eleventy over WordPress, and what’s next for this blog. Welcome to my digital space!">
+<meta property="og:image" content="https://www.marooflone.com/assets/blog/hello-world-my-first-blog-post.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.marooflone.com/blog/hello-world-my-first-blog-post/">
+<meta property="og:image:alt" content="Hello, World! My First Blog Post">
+
+
+
+    <meta property="og:type" content="article">
+  
+
+
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:width" content="1200">
+<meta name="twitter:image:height" content="630">
+<meta name="twitter:title" content="Hello, World! My First Blog Post">
+<meta name="twitter:description" content="After a long wait, I finally built my personal website! In this post, I share how I created it using HTML, CSS, and JavaScript, why I chose Eleventy over WordPress, and what’s next for this blog. Welcome to my digital space!">
+<meta name="twitter:image" content="https://www.marooflone.com/assets/blog/hello-world-my-first-blog-post.webp">
+<meta name="twitter:image:alt" content="Hello, World! My First Blog Post">
+
+<!-- Netlify CMS -->
+ <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+ 
+
+
+
+</head>
+<body>
+  <div class="page-wrapper">
+  <!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header id="mainHeader">
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="logo">
+    <a href="/" class="logo-link">
+      <img src="/assets/images/favicon/apple-touch-icon.png" alt="Logo" class="logo-img">
+      <span class="logo-text">Maroof Lone</span>
+    </a>
+  </div>
+  <div class="overlay"></div>
+  <nav class="menu">
+    <ul>
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="/about-me"><i class="fas fa-info-circle"></i> About Me</a></li>
+      <li><a href="/contact-me"><i class="fas fa-phone"></i> Contact Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Prevent scrolling when menu is open */
+body.no-scroll {
+  overflow: hidden;
+}
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--primary);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header.hidden {
+  transform: translateY(-100%) !important;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-img {
+  height: 30px;
+}
+
+.logo-text {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: white;
+  line-height: 30px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.3rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-toggle.active .hamburger {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.active .hamburger::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 70%;
+  background: #2d3748;
+  transition: left 0.5s ease-in-out;
+  padding-top: 5rem;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    width: 30%;
+  }
+}
+
+.menu.active {
+  left: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 1rem 0;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu a:hover,
+.menu a:active {
+  color: #BFA105;
+  transition: color 0.3s ease-in-out;
+}
+
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.overlay');
+  const hamburgerIcon = document.querySelector('.hamburger');
+  
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburgerIcon.classList.toggle('fa-bars');
+    hamburgerIcon.classList.toggle('fa-times');
+  
+    // Prevent body scroll when the menu is open
+    document.body.classList.toggle('no-scroll', menu.classList.contains('active'));
+  });
+  
+  overlay.addEventListener('click', () => {
+    closeMenu();
+  });
+  
+  function closeMenu() {
+    menuToggle.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburgerIcon.classList.add('fa-bars');
+    hamburgerIcon.classList.remove('fa-times');
+  
+    // Enable body scroll again when menu closes
+    document.body.classList.remove('no-scroll');
+  }
+  </script>
+  
+
+  <main>
+    <article class="main-article">
+<div class="container container--narrow flow">
+  
+    <h1 class="article-title">
+      Hello, World! My First Blog Post
+    </h1>
+    <figure class="main-article__figure">
+      <img src="/assets/blog/hello-world-my-first-blog-post.webp" alt="Just me, my laptop, and the mountains outside. Image generated using AI.">
+      <figcaption>
+        Just me, my laptop, and the mountains outside. Image generated using AI.
+      </figcaption>
+    </figure>
+    <div class="post-meta">
+      <p><i class="fa-solid fa-user"></i> Written By: Maroof Lone</p>
+      <p><i class="fas fa-calendar-alt"></i> Published On: Feb 20, 2025</p>
+    </div>  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn facebook">
+      <i class="fa-brands fa-facebook-f"></i> Share
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.marooflone.com/blog/hello-world-my-first-blog-post/&text=Hello%2C%20World!%20My%20First%20Blog%20Post" target="_blank" class="social-btn twitter">
+      <i class="fa-brands fa-twitter"></i> Tweet
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn linkedin">
+      <i class="fa-brands fa-linkedin-in"></i> Share
+    </a>
+    <a href="https://api.whatsapp.com/send?text=Hello%2C%20World!%20My%20First%20Blog%20Post%20https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+      
+  <h1>Hello, Glad You’re Here!</h1>
+<p>Welcome to the very first post on my website! I’m genuinely excited to kick things off and finally bring this idea to life. For a long time, I had planned of having a website with my own domain name—but like most plans, I kept putting it off.</p>
+<h2>The Journey Begins 🚀</h2>
+<p>Last week, I finally decided to stop procrastinating. I bought a domain, built a simple website using basic <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, and hosted it on <strong><a href="https://pages.cloudflare.com/">Cloudflare Pages</a></strong>. Just like that, the foundation was set.</p>
+<p>But something was missing…<br>
+A website without a blog felt incomplete.</p>
+<h2>Why Not WordPress?</h2>
+<p>At first, I considered using <strong><a href="https://wordpress.org/">WordPress (WP)</a></strong> for my blog, either on a subdirectory or a subdomain.</p>
+<blockquote>
+<p><em>What’s WordPress?</em><br>
+WordPress is a popular content management system (CMS) that powers millions of websites. It allows users to create, manage, and publish content with ease using plugins, themes, and a user-friendly interface.</p>
+</blockquote>
+<p>Since I’ve worked with WordPress for years and had plenty of hosting space available, it seemed like the obvious choice. But for a personal blog like this, WordPress felt a bit too heavy and overly complex. I wanted something <strong>lightweight</strong> and <strong>simple</strong>.</p>
+<h2>Discovering Static Site Generators (SSGs)</h2>
+<p>That’s when I started exploring <strong>Static Site Generators (SSGs)</strong>.</p>
+<blockquote>
+<p><em>What’s an SSG?</em><br>
+An SSG converts plain text content into static HTML files during the build process. Unlike traditional CMS platforms like WordPress, SSGs don’t need a database, making websites faster, more secure, and easier to manage.</p>
+</blockquote>
+<p>After some research, I found <strong><a href="https://www.11ty.dev/">Eleventy (11ty)</a></strong>—and it seemed like the perfect fit.</p>
+<h3>What’s Eleventy?</h3>
+<p><strong>Eleventy</strong> is a flexible and beginner-friendly static site generator. Unlike WordPress, it doesn’t rely on a database, which keeps the site fast and lightweight. It also lets me write content using <strong>Markdown</strong>, a simple way to format text without the hassle of complex editors.</p>
+<p>What I love most about Eleventy is its customizability—it gives me complete control over the design and structure of my blog.</p>
+<h2>Building the Blog 🛠️</h2>
+<p>Once I settled on Eleventy, I got to work integrating it into my website. It took a bit of effort (and lots of learning), but now the blog is fully functional and running smoothly.</p>
+<h2>What’s Next?</h2>
+<p>Now that my blog is live, I plan to share:</p>
+<ul>
+<li>💻 <strong>Web Development Tips</strong></li>
+<li>🔍 <strong>OSINT Techniques</strong></li>
+<li>✅ <strong>Fact-Checking Insights</strong></li>
+<li>🌐 <strong>Thoughts on Social Media &amp; Internet Culture</strong></li>
+<li>📝 <strong>Random musings</strong></li>
+</ul>
+<p>This space will be my little corner of the internet—where I share ideas, learn new things, and hopefully connect with readers like you.</p>
+<hr>
+<p>If you’re reading this, <strong>thank you</strong> for stopping by! This is just the beginning of what I hope will be an exciting journey.</p>
+<p>Let’s see where it takes us. 🚀</p>
+<p><strong>~ Maroof</strong></p>
+
+  
+</div>
+</article>
+<center>-------- End --------</center>
+<!-- Share Buttons -->
+<div class="social-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn facebook">
+    <i class="fa-brands fa-facebook-f"></i> Share
+  </a>
+  <a href="https://twitter.com/intent/tweet?url=https://www.marooflone.com/blog/hello-world-my-first-blog-post/&text=Hello%2C%20World!%20My%20First%20Blog%20Post" target="_blank" class="social-btn twitter">
+    <i class="fa-brands fa-twitter"></i> Tweet
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn linkedin">
+    <i class="fa-brands fa-linkedin-in"></i> Share
+  </a>
+  <a href="https://api.whatsapp.com/send?text=Hello%2C%20World!%20My%20First%20Blog%20Post%20https://www.marooflone.com/blog/hello-world-my-first-blog-post/" target="_blank" class="social-btn whatsapp">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+
+</div>
+<section class="recent-posts">
+  <h3 class="recent-posts__title">Recent Posts</h3>
+  <ul class="recent-posts__list">
+     
+    
+    
+       
+        <li class="recent-post">
+          <a href="/blog/zaingeer-and-bomai-a-tale-of-history-heritage-and-unity/" class="recent-post__link">
+            
+              <img src="/assets/blog/zaingeer-and-bomai_compressed_v1.jpg" alt="Zaingeer and Bomai: A tribute to Kashmir&#39;s rich history, culture, and timeless unity. Image generated using AI." class="recent-post__image">
+            
+            <div class="recent-post__content">
+              <h4 class="recent-post__title">Zaingeer and Bomai: A Tale of History, Heritage, and Unity</h4>
+              <p class="recent-post__date">Feb 23, 2025</p>
+            </div>
+          </a>
+        </li>
+        
+      
+    
+      
+    
+  </ul>
+  <div class="read-all-posts">
+    <a href="/blog" class="read-all-posts__button">Read All Posts</a>
+  </div>  
+</section>
+
+
+<br>
+  </main>
+    <footer>
+  <section class="contact">
+    <h2>Quick Links</h2>
+    <div class="footer-links">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about-me"><i class="fas fa-user"></i> About Me</a>
+      <a href="/contact-me"><i class="fas fa-envelope-open"></i> Contact Me</a>
+    </div>
+
+    <p>© 2025 <a href="/">Maroof Lone</a>. All rights reserved.</p>
+  </section>
+</footer>
+
+
+  </div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+   // Hide header on scroll down, show on scroll up
+      let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+        const threshold = 50; // Reduced threshold for mobile
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > threshold) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+
+        });
+
+    </script>
+    
+</body>
+</html>

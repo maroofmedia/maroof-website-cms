@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Contact Me </title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Contact Me">
+<meta property="og:description" content="Blogger | OSINT Enthusiast | Media Analyst | Cybersecurity Explorer | Kashmiri at Heart | Exploring stories, trends, and insights that matter.">
+<meta property="og:image" content="https://www.marooflone.com/assets/images/main-assets/og-discription-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.marooflone.com/contact-me/">
+<meta property="og:image:alt" content="Contact Me">
+
+
+
+    <meta property="og:type" content="website">
+  
+
+
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:width" content="1200">
+<meta name="twitter:image:height" content="630">
+<meta name="twitter:title" content="Contact Me">
+<meta name="twitter:description" content="Blogger | OSINT Enthusiast | Media Analyst | Cybersecurity Explorer | Kashmiri at Heart | Exploring stories, trends, and insights that matter.">
+<meta name="twitter:image" content="https://www.marooflone.com/assets/images/main-assets/og-discription-image.png">
+<meta name="twitter:image:alt" content="Contact Me">
+
+<!-- Netlify CMS -->
+ <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+ 
+
+
+
+</head>
+<body>
+  <div class="page-wrapper">
+  <!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header id="mainHeader">
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="logo">
+    <a href="/" class="logo-link">
+      <img src="/assets/images/favicon/apple-touch-icon.png" alt="Logo" class="logo-img">
+      <span class="logo-text">Maroof Lone</span>
+    </a>
+  </div>
+  <div class="overlay"></div>
+  <nav class="menu">
+    <ul>
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="/about-me"><i class="fas fa-info-circle"></i> About Me</a></li>
+      <li><a href="/contact-me"><i class="fas fa-phone"></i> Contact Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Prevent scrolling when menu is open */
+body.no-scroll {
+  overflow: hidden;
+}
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--primary);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header.hidden {
+  transform: translateY(-100%) !important;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-img {
+  height: 30px;
+}
+
+.logo-text {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: white;
+  line-height: 30px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.3rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-toggle.active .hamburger {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.active .hamburger::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 70%;
+  background: #2d3748;
+  transition: left 0.5s ease-in-out;
+  padding-top: 5rem;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    width: 30%;
+  }
+}
+
+.menu.active {
+  left: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 1rem 0;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu a:hover,
+.menu a:active {
+  color: #BFA105;
+  transition: color 0.3s ease-in-out;
+}
+
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.overlay');
+  const hamburgerIcon = document.querySelector('.hamburger');
+  
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburgerIcon.classList.toggle('fa-bars');
+    hamburgerIcon.classList.toggle('fa-times');
+  
+    // Prevent body scroll when the menu is open
+    document.body.classList.toggle('no-scroll', menu.classList.contains('active'));
+  });
+  
+  overlay.addEventListener('click', () => {
+    closeMenu();
+  });
+  
+  function closeMenu() {
+    menuToggle.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburgerIcon.classList.add('fa-bars');
+    hamburgerIcon.classList.remove('fa-times');
+  
+    // Enable body scroll again when menu closes
+    document.body.classList.remove('no-scroll');
+  }
+  </script>
+  
+
+  <main>
+    
+<section class="contact-hero">
+  <h1>Contact Me</h1>
+  <p>I'd love to hear from you! Whether it's a question, a collaboration, or just a friendly hello—reach out through any of the platforms below.</p>
+
+  <div class="contact-methods">
+    <a href="mailto:hello@marooflone.com" class="contact-link">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+
+    <a href="https://www.linkedin.com/in/marooflone13" target="_blank" class="contact-link">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="https://www.x.com/marooflone13" target="_blank" class="contact-link">
+      <i class="fab fa-twitter"></i> Twitter
+    </a>
+
+    <a href="https://github.com/maroofmedia" target="_blank" class="contact-link">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
+  <a href="/about-me" class="about-link">
+    About Me <i class="fa-solid fa-arrow-right"></i>
+  </a>
+</section>
+
+<style>
+  .about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .about-link:hover {
+    background-color: #005243;
+  }
+   /* Contact Me Page Styles */
+.contact-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--primary);
+  color: var(--text-light);
+margin-top: 1rem;}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;  /* Reduced text size */
+  padding: 0.6rem 1.2rem;
+  background-color: #2d3748;
+  color: #A0AEC0;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.contact-link i {
+  font-size: 1.1rem;  /* Reduced icon size */
+}
+
+.contact-link:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Responsive for mobile */
+@media (min-width: 600px) {
+  .contact-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center;     /* Centers horizontally */
+    min-height: 100vh;       /* Full viewport height */
+    text-align: center;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+</style>
+  </main>
+    <footer>
+  <section class="contact">
+    <h2>Quick Links</h2>
+    <div class="footer-links">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about-me"><i class="fas fa-user"></i> About Me</a>
+      <a href="/contact-me"><i class="fas fa-envelope-open"></i> Contact Me</a>
+    </div>
+
+    <p>© 2025 <a href="/">Maroof Lone</a>. All rights reserved.</p>
+  </section>
+</footer>
+
+
+  </div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+   // Hide header on scroll down, show on scroll up
+      let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+        const threshold = 50; // Reduced threshold for mobile
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > threshold) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+
+        });
+
+    </script>
+    
+</body>
+</html>

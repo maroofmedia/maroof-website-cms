@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  <title>404 - Page Not Found</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .error-container {
+      max-width: 600px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 40px 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .error-container h1 {
+      font-size: 6rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+      letter-spacing: 5px;
+    }
+
+    .error-container p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (min-width: 600px) {
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .error-container h1 {
+        font-size: 8rem;
+      }
+
+      .error-container p {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <div class="buttons">
+      <a href="/" class="btn">🏠 Home</a>
+      <a href="/blog" class="btn">📝 Blog</a>
+      <a href="/about-me" class="btn">🧑‍💻About Me</a>
+      <a href="/contact-me" class="btn">✉️ Contact Me</a>
+
+
+    </div>
+  </div>
+</body>
+</html>

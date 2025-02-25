@@ -1,0 +1,965 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  /* Colors from */
+  --primary: #171923; /* Dark background */
+  --secondary: #A0AEC0; /* Light gray */
+  --accent: #4FD1C5; /* Teal accent */
+
+  /* Font sizes*/
+  --fs-300: 0.9375rem;
+  --fs-400: 1.0625rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.875rem;
+  --fs-700: 2rem;
+
+  /* Font families*/
+  --ff-body: "Baloo Bhaijaan 2", cursive;
+  --ff-heading: "Baloo Bhaijaan 2", cursive;
+
+  /* Font weights */
+  --fw-400: 400;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  /* Neutral colors */
+  --clr-neutral-100: #ffffff; /* White */
+  --clr-neutral-300: #A0AEC0; /* Secondary */
+  --clr-neutral-400: #808e9b; /* Darker secondary */
+  --clr-neutral-500: #d1d5db; /* Light gray */
+  --clr-neutral-900: #171923; /* Primary from */
+
+  /* Primary colors*/
+  --clr-primary-200: #e6fffa; /* Light accent background */
+  --clr-primary-300: #4FD1C5; /* Accent from*/
+  --clr-primary-400: #38b2ac; /* Slightly darker accent */
+  --clr-primary-500: #2c7a7b; /* Even darker accent */
+}
+
+@media (min-width: 35em) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2.25rem;
+    --fs-700: 3rem;
+  }
+}
+
+/* General Styling */
+body {
+  font-family: var(--ff-body);
+  line-height: 1.6;
+  background-color: var(--primary);
+  color: var(--clr-neutral-100); /* White text */
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-900);
+  line-height: 1.1;
+  color: var(--clr-primary-300); /* Teal accent for headings */
+}
+
+strong {
+  font-weight: var(--fw-700);
+}
+
+section,
+.section {
+  padding: min(10vh, 10em) 0;
+}
+
+/* Utility Classes */
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 1.5em;
+  max-width: 72rem;
+}
+
+.container--narrow {
+  max-width: 65rem;
+}
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, 1em);
+}
+
+.text-center {
+  text-align: center;
+  margin-top: -1rem;
+}
+
+/* Typography */
+
+.article-title,
+.section-title {
+  color: #4FD1C5;
+}
+
+.article-title {
+  font-size: var(--fs-700);
+}
+
+.section-title {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  font-size: var(--fs-600);
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+
+.nav-list a:focus,
+.nav-list a:hover {
+  color: var(--clr-primary-300);
+  text-decoration: underline;
+}
+/* Footer Section */
+.contact {
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center text and icons */
+  gap: 1.5rem; /* Space between links */
+  margin-top: 1rem;
+  flex-wrap: nowrap; /* Prevent wrapping on small screens */
+}
+
+.footer-links a {
+  color: #A0AEC0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;  /* Vertically center text */
+  gap: 0.4rem;
+  line-height: 1; /* Fix text alignment relative to the icon */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.footer-links a i {
+  font-size: 0.9rem; /* Reduced icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -0.1rem; /* Align icon with text */
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .footer-links {
+    gap: 1rem; /* Reduce space between links */
+  }
+
+  .contact {
+    padding: 1.5rem 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .footer-links a {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+
+  .footer-links a i {
+    font-size: 0.8rem; /* Smaller icons for mobile */
+  }
+}
+
+
+footer {
+  background-color: #005243; /* Background color */
+  color: #A0AEC0;
+  text-align: center;
+}
+
+footer .contact h2 {
+  color: #FFD700; /* Gold/yellow heading */
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+footer p {
+  margin-top: 1.5rem; /* Space above footer text */
+  font-size: 0.9rem;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;  /* This pushes the footer to the bottom */
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 70px;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile-section {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+  padding: 1rem;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  clip-path: circle(89% at 50% 50%);
+}
+
+.profile-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0.2;
+}
+
+/* Roles Marquee */
+.roles-marquee {
+  background: #2D3748;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+}
+
+.role-item {
+  white-space: nowrap;
+  padding: 0.6rem 1.5rem;
+  background: var(--primary);
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 60px;
+  }
+
+  .profile-section {
+    max-width: 280px;
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    line-height: 25px; /* Match the height of the logo image */
+  }
+
+  .logo-img {
+    height: 25px;
+  }
+}
+
+/* //////////////////////
+  Homepage - Hero Section
+  /////////////////////// */
+  .hero > div {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    gap: 3em;
+  }
+  
+  .hero__image {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  @media (min-width: 45em) {
+    .hero > div {
+      grid-auto-flow: column;
+    }
+  }
+  
+/* Featured Articles Section */
+.featured-articles {
+  background-color: #171923;
+  padding: 1rem;
+}
+
+.articles__list {
+  --flow-spacer: 1.5rem; /* Reduced space between posts */
+  margin: 1.5rem 0; /* Removed side margins */
+  padding: 0;
+}
+
+.articles__list li {
+  border: 2px solid #4FD1C5;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin: 0.5rem 0; /* Reduced space between posts */
+  background-color: #1A202C;
+}
+
+/* Read All Posts Container */
+.read-all-posts {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Read All Posts Button */
+.read-all-posts__button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #005243;
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.read-all-posts__button:hover {
+  background-color: #007A63;
+  transform: translateY(-3px);
+}
+  /* //////////////////////
+    Individual Article Page
+    /////////////////////// */
+  .main-article {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .main-article__figure figcaption {
+    margin: 0.5rem 0;
+    font-size: 15px;
+    opacity: 0.9;
+    font-style: italic;
+    font-weight: normal;    
+  }
+  
+  .main-article__figure img {
+    border-radius: 10px;
+}
+
+  /* //////////////////////
+    Article Snippets
+    /////////////////////// */
+  .snippet {
+    display: grid;
+    gap: 1em;
+    grid-template-areas:
+      "image"
+      "title"
+      "meta"
+      "body"
+      "button";
+  }
+
+  
+  
+  .snippet__image {
+    grid-area: image;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    ali
+  }
+  
+  .snippet__title {
+    grid-area: title;
+    color: var(--clr-neutral-100); /* White text for titles */
+    font-size: var(--fs-500);
+  }
+  
+  .snippet__title a {
+    color: #4FD1C5;
+    text-decoration: none;
+  }
+  
+  .snippet__title a:hover,
+  .snippet__title a:focus {
+    color: #ffffff; /* Teal accent on hover */
+  }
+  
+  .snippet__meta {
+    grid-area: meta;
+    color: var(--clr-neutral-300); /* Light gray for metadata */
+  }
+  
+  .snippet__meta span {
+    color: var(--clr-neutral-100); /* White for specific metadata */
+  }
+  
+  .snippet .btn {
+    grid-area: button;
+  }
+  
+  @media (min-width: 45em) {
+    .snippet {
+      grid-template-areas:
+        "title image"
+        "meta image"
+        "body image"
+        "button image";
+      grid-column-gap: 4em;
+      grid-template-columns: 1fr 40%;
+      grid-template-rows: min-content min-content min-content 1fr;
+    }
+  }
+  
+  /* //////////////////////
+    Buttons
+    /////////////////////// */
+  .btn {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1;
+    padding: 0.75em 1.75em;
+    border-radius: 0.25em;
+    align-self: start;
+    justify-self: start;
+  }
+  
+  .btn:focus {
+    outline: 0.125em solid var(--clr-primary-400);
+    outline-offset: 0.25em;
+  }
+  
+  .btn--primary {
+    background: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-700);
+    border: 2px solid var(--clr-primary-400);
+  }
+  
+  .btn--primary:hover,
+  .btn--primary:focus {
+    background: var(--clr-primary-500);
+    border-color: var(--clr-primary-500);
+  }
+  
+  .btn--neutral {
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
+    font-weight: var(--fw-700);
+    border: 2px solid var(--clr-neutral-900);
+  }
+  
+  .btn--neutral:hover,
+  .btn--neutral:focus {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-900);
+  }
+  
+  /* //////////////////////
+    Accessibility Enhancements
+    /////////////////////// */
+  a {
+    text-decoration: none;
+    color: var(--accent);
+  }
+  
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul:where([role="list"]),
+ol:where([role="list"]) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-title {
+ color: #4FD1C5;
+ font-size: 30px;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove default underline */
+  gap: 0.8rem;
+  color: inherit; /* Keep text color same as the rest */
+}
+
+.logo-link:hover {
+  opacity: 0.8; /* Optional hover effect */
+}
+
+.post-meta {
+  background-color: #2D3748; /* Slightly darker bg */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #CBD5E0; /* Lighter text color */
+  margin-bottom: 1rem; /* Space below meta */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.post-meta i {
+  color: #FFD700; /* Icon color (Gold) */
+}
+
+blockquote {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #1f2933;  /* Slightly lighter than the body bg */
+  border-left: 4px solid #3b82f6;  /* Subtle blue accent */
+  font-style: italic;
+  color: #e0e0e0;  /* Light grey text for better readability */
+  border-radius: 0.5rem;  /* Rounded corners for a soft look */
+}
+
+/* Recent Posts Section */
+.recent-posts {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #1A202C;
+  border-radius: 0.5rem;
+  color: #A0AEC0;
+
+  /* Responsive space adjustments */
+  margin-left: 10%;
+  margin-right: 10%;
+
+  margin-bottom: 2rem; /* Space between recent posts and footer */
+}
+
+/* Post List */
+.recent-posts__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Single Post */
+.recent-post {
+  display: flex;
+  background-color: #1A202C;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  flex-direction: row;
+}
+
+/* Post Image */
+.recent-post__image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  margin-right: 1rem;
+}
+
+/* Post Content */
+.recent-post__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Post Link */
+.recent-post__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* Post Title */
+.recent-post__title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+}
+
+/* Post Date */
+.recent-post__date {
+  color: #CBD5E0;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+/* Section Title */
+.recent-posts__title {
+  text-align: center;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Read All Posts Container */
+.read-all-posts {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Read All Posts Button */
+.read-all-posts__button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #005243;
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.read-all-posts__button:hover {
+  background-color: #007A63;
+  transform: translateY(-3px);
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .recent-posts {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .recent-post {
+    flex-direction: row; /* Keep image on the left and content on the right */
+    align-items: stretch; /* Make sure image and content are of equal height */
+    gap: 1rem; /* Space between image and content */
+  }
+
+  .recent-post__image {
+    width: 30%; /* Image takes up 30% width */
+    height: auto;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
+  .recent-post__content {
+    width: 70%; /* Content takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .recent-post__title {
+    font-size: 1rem; /* Slightly smaller font for mobile */
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .recent-posts__title {
+    font-size: 1.25rem;
+  }
+
+  .read-all-posts__button {
+    width: 90%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recent-post {
+    flex-direction: row; /* Maintain row layout for small screens too */
+  }
+
+  .recent-post__image {
+    width: 35%; /* Slightly more space for image */
+    height: auto;
+  }
+
+  .recent-post__title {
+    font-size: 0.9rem;
+  }
+
+  .read-all-posts__button {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Styling for inline images with captions */
+figure.inline-image {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure.inline-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+figure.inline-image figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Fix for bullet points going outside the layout */
+ul, ol {
+  padding-left: 1rem;  /* Adds space between bullets and text */
+  margin-left: 0;        /* Prevents overflow from margins */
+  list-style-position: inside;  /* Ensures bullets stay inside the container */
+  box-sizing: border-box;  /* Makes sure padding stays within the layout */
+}
+
+/* Optional: Style list items for better appearance */
+li {
+  margin-bottom: 0.5rem;  /* Adds space between list items */
+  line-height: 1.6;       /* Improves readability */
+}
+
+/* Social Share Buttons */
+.social-share {
+  display: flex;
+  gap: 0.5rem;  /* Reduced gap */
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;  /* Wrap as backup for very small screens */
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;  /* Smaller space between icon and text */
+  padding: 0.4rem 0.6rem;  /* Reduced padding */
+  border-radius: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.social-btn i {
+  font-size: 0.9rem;  /* Slightly smaller icons */
+}
+
+/* Platform-Specific Colors */
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1da1f2; }
+.linkedin { background-color: #0077b5; }
+.whatsapp { background-color: #25d366; }
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Adjust for Mobile */
+@media (max-width: 600px) {
+  .social-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .social-btn i {
+    font-size: 0.75rem;
+  }
+
+  .social-share {
+    gap: 0.3rem;  /* Smaller gap on mobile */
+  }
+}
+
+/* Read My Blog Button - Compact & Stylish */
+.read-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background-color: #4FD1C5;
+  color: #171923;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Makes it clickable */
+  border: 2px solid transparent;
+  margin-top: 1rem; /* Add space above the button */
+  position: relative; /* Ensures z-index works */
+  z-index: 10; /* Fixes clickability issue */
+}
+
+/* Hover & Focus Effects */
+.read-blog-btn:hover,
+.read-blog-btn:focus {
+  background-color: #38B2AC;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  border-color: #2C7A7B;
+}
+
+/* Icon Styling */
+.read-blog-btn i {
+  font-size: 1rem;
+}
+
+/* Fix for Clickability on Active */
+.read-blog-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Fixes */
+@media (max-width: 600px) {
+  .read-blog-btn {
+    margin-top: 1.5rem; /* Add more space above on small screens */
+    z-index: 20; /* Ensure it's above all elements */
+  }
+}
+
+.hero-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+.about-section {
+  flex: 1;
+  padding: 1rem;
+}
