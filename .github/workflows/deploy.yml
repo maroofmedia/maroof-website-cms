@@ -3,7 +3,7 @@ name: Deploy Eleventy Site
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main  
 
 jobs:
   build:
