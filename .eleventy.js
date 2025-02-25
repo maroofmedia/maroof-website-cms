@@ -1,9 +1,10 @@
-require('dotenv').config();
-
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
+  // Load environment variables
+  require('dotenv').config();
+
   // Custom markdown-it instance
   const md = markdownIt({
     html: true,
@@ -47,7 +48,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/admin");
   eleventyConfig.addPassthroughCopy({ "./src/_headers": "./_headers" });
 
-
   // Custom date filter using Luxon
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -55,14 +55,14 @@ module.exports = function (eleventyConfig) {
 
   // Add global site data for absolute URLs
   eleventyConfig.addGlobalData("site", {
-    url: "https://www.marooflone.com", 
+    url: "https://www.marooflone.com",
   });
 
-  // Anaylytics
+  // Analytics
   eleventyConfig.addGlobalData("analytics", {
     id: process.env.GOOGLE_ANALYTICS_ID || null,
   });
-  
+
   // Return configuration settings
   return {
     dir: {
