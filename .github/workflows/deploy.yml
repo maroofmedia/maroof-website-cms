@@ -1,31 +1,34 @@
-name: Deploy Eleventy Site 🚀
+name: Deploy Eleventy Site
 
 on:
   push:
     branches:
-      - main  # Trigger deployment only on pushes to the main branch
+      - main  # or your deployment branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
-      - name: Checkout Repository 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - name: Set up Node.js 📦
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install Dependencies 📥
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build Eleventy Site 🏗️
+      - name: Build Eleventy Site
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
         run: npm run build
 
-      - name: Deploy to GitHub Pages 🚀
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GH_TOKEN }}  # Using personal_token instead of github_token
-          publish_dir: public  # Eleventy output folder
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: public
