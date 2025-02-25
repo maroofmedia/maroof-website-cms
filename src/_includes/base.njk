@@ -41,8 +41,20 @@
 <meta name="twitter:image" content="{{ site.url }}{% if image %}{{ image }}{% else %}/assets/images/main-assets/og-discription-image.png{% endif %}">
 <meta name="twitter:image:alt" content="{{ title | default('Maroof Lone - Blogger and Media Analyst') }}">
 
+<!-- Netlify CMS -->
+ <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+ {% if analytics.id %}
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics.id }}"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+   gtag('js', new Date());
+   gtag('config', '{{ analytics.id }}');
+ </script>
+{% endif %}
+
 
 
 </head>

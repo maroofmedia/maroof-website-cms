@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 
@@ -56,6 +58,11 @@ module.exports = function (eleventyConfig) {
     url: "https://www.marooflone.com", 
   });
 
+  // Anaylytics
+  eleventyConfig.addGlobalData("analytics", {
+    id: process.env.GOOGLE_ANALYTICS_ID || null,
+  });
+  
   // Return configuration settings
   return {
     dir: {
