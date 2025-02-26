@@ -1,6 +1,5 @@
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
-const slugify = require("@sindresorhus/slugify").default; // ✅ FIXED
 require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
