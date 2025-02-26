@@ -963,3 +963,173 @@ li {
   flex: 1;
   padding: 1rem;
 }
+
+.tag-container {
+  max-width: 900px;
+  margin: 60px auto; /* Increased top margin for better spacing */
+  padding: 20px;
+}
+
+/* Fixed spacing issue above "Posts Tagged" */
+.tag-container h1 {
+  font-size: 32px;
+  text-align: center;
+  color: #4FD1C5; /* Same color as borders */
+  font-weight: bold; /* Kept boldness */
+  margin: 40px 0 20px; /* Added top margin for spacing */
+}
+
+/* Make list responsive */
+.tag-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Consistent spacing between items */
+}
+
+.tag-list li {
+  border: 2px solid #4FD1C5;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  background-color: #1A202C;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Ensure image scales well on smaller screens */
+.tag-list img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Keep link boldness */
+.tag-list a {
+  color: #4FD1C5;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold; /* Ensuring it remains bold */
+  transition: color 0.2s;
+}
+
+.tag-list a:hover {
+  color: #FFFFFF;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .tag-container {
+    padding: 15px; /* Reduce padding for small screens */
+    margin: 40px auto; /* Adjust spacing */
+  }
+
+  .tag-container h1 {
+    font-size: 24px; /* Smaller text for mobile */
+    margin: 30px 0 15px; /* Adjusted top margin */
+  }
+
+  .tag-list li {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .tag-list img {
+    width: 100%; /* Full width for better display */
+    height: auto;
+  }
+}
+
+.tag-post-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-date {
+  font-size: 14px;
+  color: #A0AEC0; /* Light grey */
+  margin-top: 5px;
+}
+
+/* Tags on Homepage */
+.tags-section {
+  text-align: center;
+  margin: 20px 0; 
+}
+
+.tags-section h2 {
+  margin-bottom: 10px; 
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px; 
+  justify-content: center;
+  padding: 0 10px; 
+}
+
+.tag-link {
+  display: inline-block;
+  padding: 6px 10px; 
+  font-size: 15px; 
+  font-weight: bold;
+  color: #4FD1C5;
+  background-color: #1A202C;
+  border: 2px solid #4FD1C5;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tag-link:hover {
+  background-color: #4FD1C5;
+  color: #1A202C;
+}
+
+/* Article Tags */
+.post-tags {
+  margin-top: 20px;
+  padding-left: 20px; 
+  font-size: 16px;
+  text-align: left;
+  color: #4FD1C5;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  flex-wrap: wrap; 
+}
+
+.post-tags p {
+  font-weight: bold;
+  font-size: 16px; 
+  margin: 0;
+}
+
+.post-tags a {
+  text-decoration: none;
+  font-weight: 500; 
+  font-size: 15px; 
+  color: #4FD1C5;
+  transition: color 0.3s ease;
+  border: none; 
+}
+
+.post-tags a:hover {
+    color: #000000; 
+  }
+  
+
+
+/* Fix for margin issue on PC view */
+@media (min-width: 1024px) {
+  .post-tags {
+    padding-left: 0; 
+    max-width: 900px; 
+    margin: 0 auto; 
+  }
+}
