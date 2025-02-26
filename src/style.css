@@ -1094,7 +1094,7 @@ li {
 /* Article Tags */
 .post-tags {
   margin-top: 20px;
-  padding-left:30px;
+  padding-left: 30px;
   font-size: 16px;
   text-align: left;
   color: #4FD1C5;
@@ -1132,4 +1132,10 @@ li {
     max-width: 900px; 
     margin: 0 auto; 
   }
+}
+
+/* Adjust left padding for mobile */
+@media (max-width: 1024px) {
+  .post-tags {
+    padding-left: 30px; /* Adjust as needed to match content margin */  }
 }
