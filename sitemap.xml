@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Add homepage manually -->
+    
+    
+    <url>
+        <loc>https://www.marooflone.com/</loc>
+        <lastmod>2025-02-26</lastmod>
+    </url>
+    
+
+    <!-- List all pages -->
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/blog/hello-world-my-first-blog-post/</loc>
+          <lastmod>2025-02-20</lastmod>
+        </url>      
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/blog/zaingeer-and-bomai-a-tale-of-history-heritage-and-unity/</loc>
+          <lastmod>2025-02-23</lastmod>
+        </url>      
+        
+    
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/about-me/</loc>
+          <lastmod>2025-02-26</lastmod>
+        </url>      
+        
+    
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/blog/</loc>
+          <lastmod>2025-02-26</lastmod>
+        </url>      
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/contact-me/</loc>
+          <lastmod>2025-02-26</lastmod>
+        </url>      
+        
+    
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/tags/all/</loc>
+          <lastmod>2025-02-26</lastmod>
+        </url>      
+        
+    
+
+    <!-- List all tag pages -->
+    
+        
+        
+            
+            
+            <url>
+                <loc>https://www.marooflone.com/tags/featured/</loc>
+                <lastmod>2025-02-20</lastmod> 
+            </url>
+            
+        
+    
+        
+        
+            
+            
+            <url>
+                <loc>https://www.marooflone.com/tags/writings/</loc>
+                <lastmod>2025-02-23</lastmod> 
+            </url>
+            
+        
+    
+
+</urlset>
