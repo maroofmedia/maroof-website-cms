@@ -1,69 +1,87 @@
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
+const slugify = require("@sindresorhus/slugify").default; // ✅ FIXED
+require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
-  // Load environment variables
-  require('dotenv').config();
-
-  // Custom markdown-it instance
+  // ✅ Markdown-it configuration
   const md = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
   });
 
-  // Custom image renderer to include captions using alt or title attributes
-  const defaultRender =
-    md.renderer.rules.image ||
-    function (tokens, idx, options, env, self) {
-      return self.renderToken(tokens, idx, options);
-    };
+  // ✅ Tags Collection
+  eleventyConfig.addCollection("tagList", function (collectionApi) {
+    let tagSet = new Set();
+    collectionApi.getAll().forEach((item) => {
+      if (item.data.tags) {
+        let tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
+        tags.forEach((tag) => tagSet.add(tag));
+      }
+    });
+    return [...tagSet];
+  });
+  
 
+  // ✅ Custom Image Renderer (with captions)
   md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
     const src = token.attrGet("src");
     const alt = token.content;
     const title = token.attrGet("title");
 
-    // Return image wrapped in a <figure> with a <figcaption> for the caption
     return `
       <figure class="inline-image">
         <img src="${src}" alt="${alt}" loading="lazy">
-        ${
-          title
-            ? `<figcaption>${title}</figcaption>`
-            : alt
-            ? `<figcaption>${alt}</figcaption>`
-            : ""
-        }
+        ${title ? `<figcaption>${title}</figcaption>` : alt ? `<figcaption>${alt}</figcaption>` : ""}
       </figure>
     `;
   };
 
   eleventyConfig.setLibrary("md", md);
 
-  // Passthrough copy for static files
+  // ✅ Static Assets Copy
   eleventyConfig.addPassthroughCopy("./src/style.css");
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/admin");
   eleventyConfig.addPassthroughCopy({ "./src/_headers": "./_headers" });
 
-  // Custom date filter using Luxon
+  // ✅ Date Filter using Luxon
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
 
-  // Add global site data for absolute URLs
+  // ✅ Filter collection by tag
+  eleventyConfig.addFilter("filterByTag", (collection, tag) => {
+    return collection.filter((item) => {
+      if (!item.data.tags) return false;
+      const tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
+      return tags.includes(tag);
+    });
+  });
+
+  // ✅ Slugify filter for clean URLs
+  eleventyConfig.addFilter("slug", (input) => {
+    return slugify(input || ""); 
+  });
+
+  // ✅ Global Data (Site URL & Analytics)
   eleventyConfig.addGlobalData("site", {
     url: "https://www.marooflone.com",
   });
 
-  // Analytics
   eleventyConfig.addGlobalData("analytics", {
     id: process.env.GOOGLE_ANALYTICS_ID || null,
   });
 
-  // Return configuration settings
+  // FILTER
+  eleventyConfig.addFilter("capitalize", (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+  
+
+  // ✅ Eleventy Config Return
   return {
     dir: {
       input: "src",

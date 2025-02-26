@@ -34,6 +34,20 @@ layout: 'base.njk'
   
 </div>
 </article>
+
+{% if tags.length > 0 %}
+  <div class="post-tags">
+    <p>Tags:</p>
+    <p>
+      {% for tag in tags %}
+        {% if tag != "post" %}  {# Exclude default "post" tag #}
+          <a href="/tags/{{ tag }}/" class="tag-link">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+        {% endif %}
+      {% endfor %}
+    </p>
+  </div>
+{% endif %}
+
 <center>-------- End --------</center>
 <!-- Share Buttons -->
 <div class="social-share">

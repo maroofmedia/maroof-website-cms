@@ -1,0 +1,32 @@
+---
+layout: 'base.njk'
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+---
+
+<div class="tag-container">
+  <h1>Posts Tagged ‘{{ tag | capitalize }}’</h1>
+
+  <ul class="tag-list">
+    {% for post in collections[tag] | reverse %}
+      <li>
+        {% if post.data.image %}
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+        {% endif %}
+        <div class="tag-post-content">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+          <p class="post-date">{{ post.date | postDate }}</p> 
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="read-all-posts">
+    <a href="/blog" class="read-all-posts__button">
+      <i class="fa-solid fa-user-pen"></i> View All Posts
+    </a>
+  </div>
+</div>
