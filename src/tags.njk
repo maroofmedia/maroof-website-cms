@@ -5,6 +5,8 @@ pagination:
   size: 1
   alias: tag
 permalink: /tags/{{ tag }}/
+eleventyComputed:
+  title: "Posts Tagged {{ tag |  capitalize }}"
 ---
 
 <div class="tag-container">

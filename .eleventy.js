@@ -10,18 +10,26 @@ module.exports = function (eleventyConfig) {
     linkify: true,
   });
 
-  // ✅ Tags Collection
-  eleventyConfig.addCollection("tagList", function (collectionApi) {
-    let tagSet = new Set();
-    collectionApi.getAll().forEach((item) => {
-      if (item.data.tags) {
-        let tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
-        tags.forEach((tag) => tagSet.add(tag));
-      }
+    // ✅ Add this missing date filter
+    eleventyConfig.addFilter("date", (dateObj, format = "yyyy-MM-dd") => {
+      return DateTime.fromJSDate(dateObj).toFormat(format);
     });
-    return [...tagSet];
-  });
-  
+
+    eleventyConfig.addCollection("tagList", function(collectionApi) {
+      let tagSet = new Set();
+      collectionApi.getAll().forEach(item => {
+        if ("tags" in item.data) {
+          let tags = item.data.tags;
+          tags = tags.filter(tag => tag !== "post"); // Exclude unwanted tags
+          for (const tag of tags) {
+            tagSet.add(tag);
+          }
+        }
+      });
+    
+      return [...tagSet];
+    });
+    
 
   // ✅ Custom Image Renderer (with captions)
   md.renderer.rules.image = function (tokens, idx, options, env, self) {
@@ -70,9 +78,6 @@ module.exports = function (eleventyConfig) {
     url: "https://www.marooflone.com",
   });
 
-  eleventyConfig.addGlobalData("analytics", {
-    id: process.env.GOOGLE_ANALYTICS_ID || null,
-  });
 
   // FILTER
   eleventyConfig.addFilter("capitalize", (str) => {

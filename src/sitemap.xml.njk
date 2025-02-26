@@ -1,0 +1,41 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Add homepage manually -->
+    {% set latestPage = collections.all | sort(attribute='date') | reverse | first %}
+    {% if latestPage %}
+    <url>
+        <loc>{{ site.url }}/</loc>
+        <lastmod>{{ latestPage.date | date("yyyy-MM-dd") }}</lastmod>
+    </url>
+    {% endif %}
+
+    <!-- List all pages -->
+    {% for page in collections.all %}
+        {% if page.url and page.date and (page.url | string).indexOf('/admin/') == -1 and page.url != "/404/" and page.url != "/" %}
+        <url>
+          <loc>{{ site.url }}{{ page.url | url }}</loc>
+          <lastmod>{{ page.date | date("yyyy-MM-dd") }}</lastmod>
+        </url>      
+        {% endif %}
+    {% endfor %}
+
+    <!-- List all tag pages -->
+    {% for tag in collections.tagList %}
+        {% set tagPages = collections[tag] or [] %}
+        {% if tagPages | length > 0 %}
+            {% set latestPost = tagPages | sort(attribute='date') | reverse | first %}
+            {% if latestPost %}
+            <url>
+                <loc>{{ site.url }}/tags/{{ tag | url }}/</loc>
+                <lastmod>{{ latestPost.date | date("yyyy-MM-dd") }}</lastmod> 
+            </url>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+</urlset>
