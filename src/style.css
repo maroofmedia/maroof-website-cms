@@ -1137,5 +1137,5 @@ li {
 /* Adjust left padding for mobile */
 @media (max-width: 1024px) {
   .post-tags {
-    padding-left: 30px; /* Adjust as needed to match content margin */  }
+    padding-left: 1.5rem;
 }
