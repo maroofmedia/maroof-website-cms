@@ -2,26 +2,35 @@
 title: Hi, I am Maroof
 layout: 'base.njk'
 ---
-    <div class="main-content">
-        <div class="profile-section">
-            <img src="/assets/images/main-assets/hero-image.jpg" 
-                 alt="Maroof Lone" 
-                 class="profile-photo">
+<div class="main-content">
+  <div class="profile-section">
+      <img src="/assets/images/main-assets/hero-image.jpg" 
+           alt="Maroof Lone" 
+           class="profile-photo">
+  </div>
 
-            <div class="hero-text">
-                <h1>Hi, I am<br>Maroof Lone</h1>
-                <a href="/blog" class="read-blog-btn"><i class="fa-solid fa-book"></i> Read my blog</a>
-            </div>
-        </div>
-        <section class="about-section">
-            <h2 style="margin-bottom: 1rem; color: var(--accent);">About Me</h2>
-            <p style="color: var(--secondary); line-height: 1.7;">
-                My name is Maroof. I enjoy things like OSINT, blogging, and writing about media trends and digital culture. I believe in learning something new every day because there’s always room to grow—and honestly, it keeps life interesting.<br>
-                Kashmir is where I’m from. <br>               
-                My goal is simple: to use my skills and knowledge to make the internet a better and safer place for everyone. Along the way, I’ll be sharing thoughts, ideas, and things I’ve learned here on this site. Hope you find something valuable!            </p>
-        </section>
-    </div>
-    
+  <div class="text-section">
+      <div class="hero-text">
+          <h1>Hi, I am Maroof Lone</h1>
+      </div>
+
+      <section class="about-section">
+          <h2>About Me</h2>
+          <p>
+              My name is Maroof. I enjoy things like OSINT, blogging, and writing about media trends and digital culture. I believe in learning something new every day because there’s always room to grow—and honestly, it keeps life interesting.<br>
+              Kashmir is where I’m from.<br>
+              My goal is simple: to use my skills and knowledge to make the internet a better and safer place for everyone. Along the way, I’ll be sharing thoughts, ideas, and things I’ve learned here on this site. Hope you find something valuable!
+          </p>
+          <a href="/blog" class="read-blog-btn">
+            <i class="fa-solid fa-book"></i> Visit My Blog
+          </a>
+          
+      </section>
+  </div>
+</div>
+
+
+
     <section class="roles-marquee">
         <!-- Line 1 -->
         <div class="marquee-container">
@@ -46,23 +55,23 @@ layout: 'base.njk'
     </section>
 
     <section id="featured-articles" class="featured-articles">
-        <div class="container flow">
-          <h2 class="section-title text-center">Featured Articles</h2>
-          <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-      
-          <ul role="list" class="articles__list flow">
-            {%- for post in collections.featured | reverse -%}
-            {% include 'article-snippet.njk' %}
-            {%- endfor -%}
-          </ul>
-      
-          <div class="read-all-posts">
-            <a href="/blog" class="read-all-posts__button">
-              <i class="fa-solid fa-user-pen"></i> View All Posts
-            </a>
-          </div>
+      <div class="container flow">
+        <h2 class="section-title text-center">Featured Articles</h2>
+        <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+    
+        <ul role="list" class="articles__list flow">
+          {%- for post in collections.featured | reverse -%}
+          {% include 'article-snippet.njk' %}
+          {%- endfor -%}
+        </ul>
+    
+        <div class="read-all-posts">
+          <a href="/blog" class="read-all-posts__button">
+            <i class="fa-solid fa-user-pen"></i> View All Posts
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
       <section class="tags-section">
         <h2>Browse Posts by Tags:</h2>
