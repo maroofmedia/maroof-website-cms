@@ -1187,4 +1187,18 @@ li {
   margin: 0 !important; 
   padding: 0 !important;
 }
+pre {
+  background-color: #1e1e2e; /* Dark background */
+  padding: 1em;
+  overflow-x: auto; /* Horizontal scroll for long lines */
+  border-radius: 10px;
+  margin: 1em 0;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap; /* Wrap long lines if needed */
+  word-wrap: break-word; /* Break long words */
+}
 
