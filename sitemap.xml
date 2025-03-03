@@ -6,7 +6,7 @@
     
     <url>
         <loc>https://www.marooflone.com/</loc>
-        <lastmod>2025-02-27</lastmod>
+        <lastmod>2025-03-03</lastmod>
     </url>
     
 
@@ -31,7 +31,7 @@
         
         <url>
           <loc>https://www.marooflone.com/about-me/</loc>
-          <lastmod>2025-02-27</lastmod>
+          <lastmod>2025-03-03</lastmod>
         </url>      
         
     
@@ -40,14 +40,14 @@
         
         <url>
           <loc>https://www.marooflone.com/blog/</loc>
-          <lastmod>2025-02-27</lastmod>
+          <lastmod>2025-03-03</lastmod>
         </url>      
         
     
         
         <url>
           <loc>https://www.marooflone.com/contact-me/</loc>
-          <lastmod>2025-02-27</lastmod>
+          <lastmod>2025-03-03</lastmod>
         </url>      
         
     
@@ -56,12 +56,30 @@
         
         <url>
           <loc>https://www.marooflone.com/tags/all/</loc>
-          <lastmod>2025-02-27</lastmod>
+          <lastmod>2025-03-03</lastmod>
+        </url>      
+        
+    
+        
+        <url>
+          <loc>https://www.marooflone.com/blog/adding-ramzan-timings-to-your-website/</loc>
+          <lastmod>2025-03-03</lastmod>
         </url>      
         
     
 
     <!-- List all tag pages -->
+    
+        
+        
+            
+            
+            <url>
+                <loc>https://www.marooflone.com/tags/tech/</loc>
+                <lastmod>2025-03-03</lastmod> 
+            </url>
+            
+        
     
         
         
