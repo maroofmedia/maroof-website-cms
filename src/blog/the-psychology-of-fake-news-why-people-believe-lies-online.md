@@ -32,6 +32,6 @@ Education is also key. Not everyone understands how misinformation works, so spr
 
 Fake news spreads because it plays on our biases, emotions, and social behaviors. But being aware of how our minds work can help us resist misinformation. A little skepticism goes a long way. Before believing or sharing anything, take a moment to verify—it might just stop the next big fake news story from spreading.
 
-\---
+- - -
 
 This article also appeared in the print edition of ***Morning Kashmir*** newspaper on Saturday, 15 March 2025.
