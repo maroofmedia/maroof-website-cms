@@ -10,7 +10,7 @@ date: 2025-02-27T20:09:00.000Z
 tags:
   - post
   - writings
-image: /assets/blog/clickbait-culture-the-dark-side-of-kashmir’s-youtube.jpg
+image: /assets/blog/clickbait-culture-the-dark-side-of-kashmirs-youtube.jpg
 imageAlt: "Clickbait Culture: The Dark Side of Kashmir’s YouTube"
 ---
 Kashmir’s YouTube scene has grown rapidly in recent years. From vlogs to music videos, talk shows to tutorials, and comedy sketches to dramas — you can find almost everything on the platform. It has given many young creators a space to showcase their talent and connect with a wider audience. However, along with this growth, a troubling trend has emerged — the rise of clickbait culture.  
