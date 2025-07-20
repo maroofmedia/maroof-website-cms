@@ -341,9 +341,7 @@ a:hover {
   
 /* Featured Articles Section */
 .featured-articles {
-  background-color: #171923;
-  padding: 1rem;
-}
+  background-color: #171923;}
 
 .articles__list {
   --flow-spacer: 1.5rem; /* Reduced space between posts */
