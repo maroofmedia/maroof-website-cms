@@ -60,4 +60,4 @@ AI search engines are convenient, no doubt. They’re faster than scrolling thro
 
 So yes, AI might save us time. But if we stop questioning what it shows us, we risk living in an internet where the “truth” isn’t truth at all it’s just whatever was marketed the hardest.\
 \
-*P.S: P.S. Chatbots can save time with quick answers, but when it comes to reviews and services, remember they often echo biased or manipulated content. Quick answers? Yes. Honest reviews? Not always.*
+*P.S: Chatbots can save time with quick answers, but when it comes to reviews and services, remember they often echo biased or manipulated content. Quick answers? Yes. Honest reviews? Not always.*
