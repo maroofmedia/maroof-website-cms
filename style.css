@@ -1304,3 +1304,7 @@ code {
   .article-link {
     align-items: center;
 }
+
+.main-article .article-title {
+  font-size: 25px !important;
+}
