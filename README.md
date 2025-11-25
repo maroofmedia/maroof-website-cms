@@ -1,3 +1,15 @@
+```
+⚠️ ARCHIVED / READ-ONLY
+
+This repository contains the legacy code (v1) for my personal website. I have recently rebuilt the site with an updated design, cleaner CSS, and improved performance.
+
+This repository is no longer maintained. Active development has moved to a new repository.
+
+👉 View the new source code here: https://github.com/maroofmedia/marooflone-website
+```
+
+---
+
 # 🌍 Personal Website & Blog
 
 This is my personal website and blog, now powered by **Eleventy (11ty)**, a simple and flexible static site generator. I initially built this site using **HTML**, **CSS**, and **JavaScript**, and later integrated Eleventy to enhance the blogging experience.
@@ -75,3 +87,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 - Built using **Eleventy (11ty)**  
 - Deployed using **Netlify**
+
